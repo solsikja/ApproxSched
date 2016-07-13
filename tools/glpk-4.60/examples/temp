@@ -1,0 +1,47 @@
+Problem:    
+Rows:       8
+Columns:    7
+Non-zeros:  48
+Status:     OPTIMAL
+Objective:  value = 296.2166065 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 yield        NS          2000          2000             =    -0.0135957 
+     2 fe           NU            60                          60      -2.56823 
+     3 cu           B        83.9675                         100 
+     4 mn           NU            40                          40     -0.544404 
+     5 mg           B        19.9603                          30 
+     6 al           NL          1500          1500                    0.251986 
+     7 si1          NL           250           250                    0.485199 
+     8 si2          B            250                         300 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 bin1         NL             0             0           200      0.253625 
+     2 bin2         B        665.343             0          2500 
+     3 bin3         B        490.253           400           800 
+     4 bin4         B        424.188           100           700 
+     5 bin5         NL             0             0          1500      0.014556 
+     6 alum         B        299.639             0               
+     7 silicon      B        120.578             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 2.27e-13 on row 6
+        max.rel.err = 8.77e-17 on row 4
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 1.11e-16 on column 3
+        max.rel.err = 7.50e-17 on column 3
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

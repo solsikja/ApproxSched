@@ -1,0 +1,238 @@
+graph: { label: "kextended.vcg"
+display_edge_labels: yes
+	node: { title: "t0_0" label: "t0_0 (0)"  color: lightgreen } 
+	node: { title: "t0_1" label: "t0_1 (13)"  color: lightgreen } 
+	node: { title: "t0_2" label: "t0_2 (1)"  color: lightgreen } 
+	node: { title: "t0_3" label: "t0_3 (19)"  color: white } 
+	node: { title: "t0_4" label: "t0_4 (3)"  color: white } 
+	node: { title: "t0_5" label: "t0_5 (10)"  color: white } 
+	node: { title: "t0_6" label: "t0_6 (0)"  color: lightred } 
+	node: { title: "t0_7" label: "t0_7 (13)"  color: white } 
+	node: { title: "t0_8" label: "t0_8 (1)"  color: white } 
+	node: { title: "t0_9" label: "t0_9 (19)"  color: white } 
+	node: { title: "t0_10" label: "t0_10 (8)"  color: white } 
+	node: { title: "t0_11" label: "t0_11 (17)"  color: lightred } 
+	node: { title: "t0_12" label: "t0_12 (1)"  color: white } 
+	node: { title: "t0_13" label: "t0_13 (12)"  color: white } 
+	node: { title: "t0_14" label: "t0_14 (11)"  color: lightred } 
+	node: { title: "t0_15" label: "t0_15 (13)"  color: white } 
+	node: { title: "t0_16" label: "t0_16 (8)"  color: lightred } 
+	node: { title: "t0_17" label: "t0_17 (1)"  color: white } 
+	node: { title: "t0_18" label: "t0_18 (15)"  color: lightred } 
+	node: { title: "t0_19" label: "t0_19 (0)"  color: lightred } 
+	node: { title: "t0_20" label: "t0_20 (14)"  color: white } 
+	node: { title: "t0_21" label: "t0_21 (8)"  color: lightred } 
+	node: { title: "t0_22" label: "t0_22 (12)"  color: lightred } 
+
+	edge: { thickness: 2 sourcename:"t0_2" targetname: "t0_3"  label: "(47)" } 
+
+	edge: { thickness: 2 sourcename:"t0_3" targetname: "t0_4"  label: "(41)" } 
+
+	edge: { thickness: 2 sourcename:"t0_3" targetname: "t0_5"  label: "(43)" } 
+
+	edge: { thickness: 2 sourcename:"t0_1" targetname: "t0_5"  label: "(46)" } 
+
+	edge: { thickness: 2 sourcename:"t0_5" targetname: "t0_6"  label: "(45)" } 
+
+	edge: { thickness: 2 sourcename:"t0_4" targetname: "t0_7"  label: "(17)" } 
+
+	edge: { thickness: 2 sourcename:"t0_0" targetname: "t0_8"  label: "(3)" } 
+
+	edge: { thickness: 2 sourcename:"t0_3" targetname: "t0_8"  label: "(9)" } 
+
+	edge: { thickness: 2 sourcename:"t0_0" targetname: "t0_9"  label: "(24)" } 
+
+	edge: { thickness: 2 sourcename:"t0_1" targetname: "t0_10"  label: "(29)" } 
+
+	edge: { thickness: 2 sourcename:"t0_9" targetname: "t0_10"  label: "(38)" } 
+
+	edge: { thickness: 2 sourcename:"t0_10" targetname: "t0_11"  label: "(24)" } 
+
+	edge: { thickness: 2 sourcename:"t0_10" targetname: "t0_12"  label: "(3)" } 
+
+	edge: { thickness: 2 sourcename:"t0_10" targetname: "t0_13"  label: "(19)" } 
+
+	edge: { thickness: 2 sourcename:"t0_13" targetname: "t0_14"  label: "(24)" } 
+
+	edge: { thickness: 2 sourcename:"t0_12" targetname: "t0_14"  label: "(48)" } 
+
+	edge: { thickness: 2 sourcename:"t0_0" targetname: "t0_15"  label: "(19)" } 
+
+	edge: { thickness: 2 sourcename:"t0_15" targetname: "t0_16"  label: "(48)" } 
+
+	edge: { thickness: 2 sourcename:"t0_15" targetname: "t0_17"  label: "(28)" } 
+
+	edge: { thickness: 2 sourcename:"t0_17" targetname: "t0_18"  label: "(38)" } 
+
+	edge: { thickness: 2 sourcename:"t0_17" targetname: "t0_19"  label: "(10)" } 
+
+	edge: { thickness: 2 sourcename:"t0_7" targetname: "t0_20"  label: "(13)" } 
+
+	edge: { thickness: 2 sourcename:"t0_4" targetname: "t0_21"  label: "(6)" } 
+
+	edge: { thickness: 2 sourcename:"t0_20" targetname: "t0_22"  label: "(41)" } 
+
+	edge: { thickness: 2 sourcename:"t0_8" targetname: "t0_22"  label: "(25)" } 
+
+
+	node: { title: "t1_0" label: "t1_0 (18)"  color: lightgreen } 
+	node: { title: "t1_1" label: "t1_1 (13)"  color: white } 
+	node: { title: "t1_2" label: "t1_2 (8)"  color: white } 
+	node: { title: "t1_3" label: "t1_3 (14)"  color: white } 
+	node: { title: "t1_4" label: "t1_4 (16)"  color: white } 
+	node: { title: "t1_5" label: "t1_5 (18)"  color: white } 
+	node: { title: "t1_6" label: "t1_6 (5)"  color: white } 
+	node: { title: "t1_7" label: "t1_7 (4)"  color: white } 
+	node: { title: "t1_8" label: "t1_8 (10)"  color: white } 
+	node: { title: "t1_9" label: "t1_9 (11)"  color: white } 
+	node: { title: "t1_10" label: "t1_10 (1)"  color: white } 
+	node: { title: "t1_11" label: "t1_11 (11)"  color: white } 
+	node: { title: "t1_12" label: "t1_12 (10)"  color: white } 
+	node: { title: "t1_13" label: "t1_13 (15)"  color: lightred } 
+	node: { title: "t1_14" label: "t1_14 (17)"  color: white } 
+	node: { title: "t1_15" label: "t1_15 (11)"  color: white } 
+	node: { title: "t1_16" label: "t1_16 (3)"  color: lightred } 
+	node: { title: "t1_17" label: "t1_17 (8)"  color: lightred } 
+	node: { title: "t1_18" label: "t1_18 (12)"  color: lightred } 
+	node: { title: "t1_19" label: "t1_19 (17)"  color: lightred } 
+	node: { title: "t1_20" label: "t1_20 (15)"  color: lightred } 
+
+	edge: { thickness: 2 sourcename:"t1_0" targetname: "t1_1"  label: "(32)" } 
+
+	edge: { thickness: 2 sourcename:"t1_0" targetname: "t1_2"  label: "(30)" } 
+
+	edge: { thickness: 2 sourcename:"t1_1" targetname: "t1_2"  label: "(48)" } 
+
+	edge: { thickness: 2 sourcename:"t1_2" targetname: "t1_3"  label: "(18)" } 
+
+	edge: { thickness: 2 sourcename:"t1_2" targetname: "t1_4"  label: "(48)" } 
+
+	edge: { thickness: 2 sourcename:"t1_2" targetname: "t1_5"  label: "(49)" } 
+
+	edge: { thickness: 2 sourcename:"t1_4" targetname: "t1_6"  label: "(36)" } 
+
+	edge: { thickness: 2 sourcename:"t1_6" targetname: "t1_7"  label: "(8)" } 
+
+	edge: { thickness: 2 sourcename:"t1_5" targetname: "t1_7"  label: "(26)" } 
+
+	edge: { thickness: 2 sourcename:"t1_3" targetname: "t1_8"  label: "(0)" } 
+
+	edge: { thickness: 2 sourcename:"t1_7" targetname: "t1_9"  label: "(22)" } 
+
+	edge: { thickness: 2 sourcename:"t1_8" targetname: "t1_9"  label: "(44)" } 
+
+	edge: { thickness: 2 sourcename:"t1_0" targetname: "t1_10"  label: "(44)" } 
+
+	edge: { thickness: 2 sourcename:"t1_7" targetname: "t1_10"  label: "(27)" } 
+
+	edge: { thickness: 2 sourcename:"t1_9" targetname: "t1_11"  label: "(20)" } 
+
+	edge: { thickness: 2 sourcename:"t1_9" targetname: "t1_12"  label: "(9)" } 
+
+	edge: { thickness: 2 sourcename:"t1_6" targetname: "t1_13"  label: "(45)" } 
+
+	edge: { thickness: 2 sourcename:"t1_12" targetname: "t1_13"  label: "(30)" } 
+
+	edge: { thickness: 2 sourcename:"t1_3" targetname: "t1_14"  label: "(19)" } 
+
+	edge: { thickness: 2 sourcename:"t1_10" targetname: "t1_14"  label: "(44)" } 
+
+	edge: { thickness: 2 sourcename:"t1_4" targetname: "t1_15"  label: "(44)" } 
+
+	edge: { thickness: 2 sourcename:"t1_1" targetname: "t1_16"  label: "(12)" } 
+
+	edge: { thickness: 2 sourcename:"t1_14" targetname: "t1_16"  label: "(39)" } 
+
+	edge: { thickness: 2 sourcename:"t1_14" targetname: "t1_17"  label: "(10)" } 
+
+	edge: { thickness: 2 sourcename:"t1_12" targetname: "t1_17"  label: "(37)" } 
+
+	edge: { thickness: 2 sourcename:"t1_3" targetname: "t1_18"  label: "(16)" } 
+
+	edge: { thickness: 2 sourcename:"t1_11" targetname: "t1_19"  label: "(26)" } 
+
+	edge: { thickness: 2 sourcename:"t1_15" targetname: "t1_20"  label: "(22)" } 
+
+
+	node: { title: "t2_0" label: "t2_0 (11)"  color: lightgreen } 
+	node: { title: "t2_1" label: "t2_1 (9)"  color: lightgreen } 
+	node: { title: "t2_2" label: "t2_2 (2)"  color: lightgreen } 
+	node: { title: "t2_3" label: "t2_3 (4)"  color: white } 
+	node: { title: "t2_4" label: "t2_4 (19)"  color: white } 
+	node: { title: "t2_5" label: "t2_5 (17)"  color: white } 
+	node: { title: "t2_6" label: "t2_6 (17)"  color: white } 
+	node: { title: "t2_7" label: "t2_7 (12)"  color: white } 
+	node: { title: "t2_8" label: "t2_8 (1)"  color: lightred } 
+	node: { title: "t2_9" label: "t2_9 (16)"  color: white } 
+	node: { title: "t2_10" label: "t2_10 (14)"  color: white } 
+	node: { title: "t2_11" label: "t2_11 (17)"  color: white } 
+	node: { title: "t2_12" label: "t2_12 (2)"  color: white } 
+	node: { title: "t2_13" label: "t2_13 (15)"  color: white } 
+	node: { title: "t2_14" label: "t2_14 (12)"  color: white } 
+	node: { title: "t2_15" label: "t2_15 (15)"  color: white } 
+	node: { title: "t2_16" label: "t2_16 (11)"  color: white } 
+	node: { title: "t2_17" label: "t2_17 (13)"  color: lightred } 
+	node: { title: "t2_18" label: "t2_18 (2)"  color: lightred } 
+	node: { title: "t2_19" label: "t2_19 (19)"  color: lightred } 
+	node: { title: "t2_20" label: "t2_20 (7)"  color: lightred } 
+	node: { title: "t2_21" label: "t2_21 (16)"  color: lightred } 
+
+	edge: { thickness: 2 sourcename:"t2_2" targetname: "t2_3"  label: "(38)" } 
+
+	edge: { thickness: 2 sourcename:"t2_1" targetname: "t2_3"  label: "(38)" } 
+
+	edge: { thickness: 2 sourcename:"t2_0" targetname: "t2_4"  label: "(30)" } 
+
+	edge: { thickness: 2 sourcename:"t2_1" targetname: "t2_5"  label: "(5)" } 
+
+	edge: { thickness: 2 sourcename:"t2_0" targetname: "t2_5"  label: "(13)" } 
+
+	edge: { thickness: 2 sourcename:"t2_3" targetname: "t2_6"  label: "(8)" } 
+
+	edge: { thickness: 2 sourcename:"t2_0" targetname: "t2_7"  label: "(31)" } 
+
+	edge: { thickness: 2 sourcename:"t2_2" targetname: "t2_7"  label: "(12)" } 
+
+	edge: { thickness: 2 sourcename:"t2_5" targetname: "t2_8"  label: "(13)" } 
+
+	edge: { thickness: 2 sourcename:"t2_4" targetname: "t2_8"  label: "(41)" } 
+
+	edge: { thickness: 2 sourcename:"t2_5" targetname: "t2_9"  label: "(22)" } 
+
+	edge: { thickness: 2 sourcename:"t2_9" targetname: "t2_10"  label: "(49)" } 
+
+	edge: { thickness: 2 sourcename:"t2_9" targetname: "t2_11"  label: "(13)" } 
+
+	edge: { thickness: 2 sourcename:"t2_7" targetname: "t2_12"  label: "(33)" } 
+
+	edge: { thickness: 2 sourcename:"t2_7" targetname: "t2_13"  label: "(15)" } 
+
+	edge: { thickness: 2 sourcename:"t2_6" targetname: "t2_14"  label: "(7)" } 
+
+	edge: { thickness: 2 sourcename:"t2_7" targetname: "t2_14"  label: "(8)" } 
+
+	edge: { thickness: 2 sourcename:"t2_14" targetname: "t2_15"  label: "(1)" } 
+
+	edge: { thickness: 2 sourcename:"t2_10" targetname: "t2_15"  label: "(15)" } 
+
+	edge: { thickness: 2 sourcename:"t2_11" targetname: "t2_16"  label: "(47)" } 
+
+	edge: { thickness: 2 sourcename:"t2_11" targetname: "t2_17"  label: "(41)" } 
+
+	edge: { thickness: 2 sourcename:"t2_12" targetname: "t2_18"  label: "(41)" } 
+
+	edge: { thickness: 2 sourcename:"t2_15" targetname: "t2_18"  label: "(9)" } 
+
+	edge: { thickness: 2 sourcename:"t2_1" targetname: "t2_19"  label: "(13)" } 
+
+	edge: { thickness: 2 sourcename:"t2_13" targetname: "t2_19"  label: "(38)" } 
+
+	edge: { thickness: 2 sourcename:"t2_11" targetname: "t2_20"  label: "(1)" } 
+
+	edge: { thickness: 2 sourcename:"t2_16" targetname: "t2_21"  label: "(38)" } 
+
+
+
+
+
+ } 

@@ -1,0 +1,913 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARG_PACK_H_	ArgPack.h	5;"	d
+ArgPack	ArgPack.cc	/^ArgPack::ArgPack(int argc, char * const argv[]) :$/;"	f	class:ArgPack
+ArgPack	ArgPack.h	/^class ArgPack {$/;"	c
+CC	Makefile	/^CC := g++$/;"	m
+COMPARABLE_NS_	Interface.h	/^namespace COMPARABLE_NS_ {$/;"	n	namespace:rstd
+COMPILE	Makefile	/^COMPILE := $(CC) -c $(OPTS) $(C_OPTS)$/;"	m
+C_OPTS	Makefile	/^C_OPTS := -O0 -ffor-scope -ftemplate-depth-50 \\$/;"	m
+Clones	Interface.h	/^template <typename> class Clones : public virtual ClonesBase {$/;"	c	namespace:rstd
+ClonesBase	Interface.h	/^class ClonesBase { protected: ~ClonesBase() {} };$/;"	c	namespace:rstd
+Comps	Interface.h	/^class Comps :$/;"	c	namespace:rstd
+CompsBase	Interface.h	/^class CompsBase<T, true, false> : public virtual CompsRoot {$/;"	c	namespace:rstd
+CompsBase	Interface.h	/^class CompsBase<T, true, true> : public virtual CompsRoot {$/;"	c	namespace:rstd
+CompsBase	Interface.h	/^template <typename T, bool COMPS, bool PROVIDE> class CompsBase {};$/;"	c	namespace:rstd
+CompsRoot	Interface.h	/^class CompsRoot { protected: ~CompsRoot() {} };$/;"	c	namespace:rstd
+Conv	RString.cc	/^Conv::Conv(const string & str) :$/;"	f	class:rstd::Conv
+Conv	RString.h	/^class Conv {$/;"	c	namespace:rstd
+DBase	DBase.cc	/^DBase::DBase(int table_offset, int type_cnt) :$/;"	f	class:DBase
+DBase	DBase.h	/^class DBase {$/;"	c
+D_BASE_H_	DBase.h	5;"	d
+Dpair	PGraph.cc	/^	Dpair(double s, double room) : start_at(s), space(room) {};$/;"	f	class:Dpair
+Dpair	PGraph.cc	/^class Dpair {$/;"	c	file:
+EPSILON_H_	Epsilon.h	5;"	d
+EQ	Interface.h	/^enum comp_type { LESS = -1, EQ = 0, GREATER = 1 };$/;"	e	enum:rstd::comp_type
+Epsilon_test	Epsilon.cc	/^void Epsilon_test() {$/;"	f	namespace:rstd
+FVector	FVector.h	/^	FVector() { STATIC_ASSERT(N); RDEBUG(self_check()); }$/;"	f	class:rstd::FVector
+FVector	FVector.h	/^class FVector :$/;"	c	namespace:rstd
+F_VECTOR_H_	FVector.h	5;"	d
+GOOD	RAlgo.h	/^	static const long GOOD = 0x40;$/;"	m	class:rstd::SearchHalt
+GRAPH_H_	Graph.h	5;"	d
+GREATER	Interface.h	/^enum comp_type { LESS = -1, EQ = 0, GREATER = 1 };$/;"	e	enum:rstd::comp_type
+GetAttrib	PGraph.cc	/^ResourceAttrib& Resource::GetAttrib(string n)$/;"	f	class:Resource
+Graph	Graph.h	/^	Graph() : super(), v_data_(), e_data_() {};$/;"	f	class:rstd::Graph
+Graph	Graph.h	/^class Graph :$/;"	c	namespace:rstd
+Graph_test	Graph.cc	/^void Graph_test() {$/;"	f	namespace:rstd
+HOLDER_PTR_	HolderPtr.h	5;"	d
+HolderPtr	HolderPtr.h	/^class HolderPtr :$/;"	c	namespace:rstd
+INTERFACE_H_	Interface.h	5;"	d
+INVALID_EINDEX	Graph.cc	/^const RawGraph::edge_index RawGraph::INVALID_EINDEX = -1;$/;"	m	class:rstd::RawGraph	file:
+INVALID_EINDEX	Graph.h	/^		static const edge_index INVALID_EINDEX;$/;"	m	class:rstd::RawGraph
+INVALID_VINDEX	Graph.cc	/^const RawGraph::vertex_index RawGraph::INVALID_VINDEX = -1;$/;"	m	class:rstd::RawGraph	file:
+INVALID_VINDEX	Graph.h	/^		static const vertex_index INVALID_VINDEX;$/;"	m	class:rstd::RawGraph
+Interface_test	Interface.cc	/^void Interface_test() {$/;"	f	namespace:rstd
+LESS	Interface.h	/^enum comp_type { LESS = -1, EQ = 0, GREATER = 1 };$/;"	e	enum:rstd::comp_type
+LINK	Makefile	/^LINK := $(CC) $(OPTS) $(L_OPTS)$/;"	m
+L_OPTS	Makefile	/^L_OPTS := -lstdc++ -lm$/;"	m
+L_cerr_hex_init	RStd.cc	/^	int L_cerr_hex_init = cerr_hex_init();$/;"	m	namespace:rstd::__anon6	file:
+L_cout_hex_init	RStd.cc	/^	int L_cout_hex_init = cout_hex_init();$/;"	m	namespace:rstd::__anon6	file:
+L_data1	RGenData.h	/^double L_data1[] = {$/;"	m	namespace:__anon12
+L_data10	RGenData.h	/^static double L_data10[] = {$/;"	m	namespace:__anon12
+L_data2	RGenData.h	/^static double L_data2[] = {$/;"	m	namespace:__anon12
+L_data3	RGenData.h	/^static double L_data3[] = {$/;"	m	namespace:__anon12
+L_data4	RGenData.h	/^static double L_data4[] = {$/;"	m	namespace:__anon12
+L_data5	RGenData.h	/^static double L_data5[] = {$/;"	m	namespace:__anon12
+L_data6	RGenData.h	/^static double L_data6[] = {$/;"	m	namespace:__anon12
+L_data7	RGenData.h	/^static double L_data7[] = {$/;"	m	namespace:__anon12
+L_data8	RGenData.h	/^static double L_data8[] = {$/;"	m	namespace:__anon12
+L_data9	RGenData.h	/^static double L_data9[] = {$/;"	m	namespace:__anon12
+MAP	RStd.h	31;"	d
+MAP2	RStd.h	34;"	d
+MAP3	RStd.h	38;"	d
+MAP4	RStd.h	43;"	d
+MAPU	RStd.h	49;"	d
+MAPU2	RStd.h	52;"	d
+MAPU3	RStd.h	56;"	d
+MAPU4	RStd.h	61;"	d
+MATCH	RAlgo.h	/^	static const long MATCH = 0x10;$/;"	m	class:rstd::SearchHalt
+MVector	RVector.h	/^		MVector(InIter first, InIter last) : super(first, last) {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^		MVector(const MVector<1, T2, INDEX> & a) : super(a) {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^		MVector(const MVector<DIM, T2, INDEX> & a) : super(a) {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^	MVector() {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^	MVector(const super & a) : super(a) {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^	MVector(size_t n, const T & value) : super(n, value) {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^	explicit MVector(size_type n) : super(n) {}$/;"	f	class:rstd::MVector
+MVector	RVector.h	/^class MVector :$/;"	c	namespace:rstd
+MVector	RVector.h	/^class MVector<1, T, INDEX> :$/;"	c	namespace:rstd
+MathVec	RMath.h	/^		MathVec(InIter first, InIter last) : super(first, last) {}$/;"	f	class:rstd::MathVec
+MathVec	RMath.h	/^	MathVec() : super() {}$/;"	f	class:rstd::MathVec
+MathVec	RMath.h	/^	MathVec(const RVector<value_type> & a) : super(a) {}$/;"	f	class:rstd::MathVec
+MathVec	RMath.h	/^	MathVec(size_type n, const value_type & value) : super(n, value) {}$/;"	f	class:rstd::MathVec
+MathVec	RMath.h	/^	explicit MathVec(size_type n) : super(n) {}$/;"	f	class:rstd::MathVec
+MathVec	RMath.h	/^class MathVec : public RVector<double> {$/;"	c	namespace:rstd
+NO	Interface.h	/^	struct NO { char c[65536]; };$/;"	s	namespace:rstd::COMPARABLE_NS_
+NO	Interface.h	/^	struct NO { char c[65536]; };$/;"	s	namespace:rstd::PRINTABLE_NS_
+NO	RStd.h	/^	struct NO { char a[5]; };$/;"	s	struct:rstd::conversion_exists_helper
+NOISE	RAlgo.h	/^	static const long NOISE = 0x8;$/;"	m	class:rstd::SearchHalt
+NextToStart	PGraph.cc	/^ResourceUse *NextToStart(double t, RVector<ResourceUse>& ruv)$/;"	f
+PGraph	PGraph.cc	/^PGraph::PGraph( ostream &eps_out,$/;"	f	class:PGraph
+PGraph	PGraph.h	/^class PGraph {$/;"	c
+PI	RStd.h	/^const double PI = 3.14159265358979323846;$/;"	m	namespace:rstd
+PI	RStd.h	18;"	d
+PRINTABLE_NS_	Interface.h	/^namespace PRINTABLE_NS_ {$/;"	n	namespace:rstd
+PS_x_out	psprint.cc	/^inline static int PS_x_out(int x) {$/;"	f	file:
+PS_y_out	psprint.cc	/^inline static int PS_y_out(int y) {$/;"	f	file:
+PSheight	psprint.cc	/^static const int PSheight = 628;$/;"	v	file:
+PSwidth	psprint.cc	/^static const int PSwidth = 500;$/;"	v	file:
+PSxoff	psprint.cc	/^static const int PSxoff = 50;$/;"	v	file:
+PSyoff	psprint.cc	/^static const int PSyoff = 50;$/;"	v	file:
+P_GRAPH_H_	PGraph.h	5;"	d
+Prints	Interface.h	/^class Prints :$/;"	c	namespace:rstd
+PrintsBase	Interface.h	/^class PrintsBase<T, true, false> : public virtual PrintsRoot {$/;"	c	namespace:rstd
+PrintsBase	Interface.h	/^class PrintsBase<T, true, true> : public virtual PrintsRoot {$/;"	c	namespace:rstd
+PrintsBase	Interface.h	/^template <typename T, bool PRINTS, bool PROVIDE> class PrintsBase {};$/;"	c	namespace:rstd
+PrintsRoot	Interface.h	/^class PrintsRoot { protected: ~PrintsRoot() {} };$/;"	c	namespace:rstd
+Quad	RPair.h	/^	Quad() : first(T1()), second(T2()), third(T3()), fourth(T4()) {}$/;"	f	struct:rstd::Quad
+Quad	RPair.h	/^struct Quad : public Prints<Quad<T1, T2, T3, T4> > {$/;"	s	namespace:rstd
+RANGE_HIGH	RAlgo.h	/^	static const long RANGE_HIGH = 0x2;$/;"	m	class:rstd::SearchHalt
+RANGE_LOW	RAlgo.h	/^	static const long RANGE_LOW = 0x1;$/;"	m	class:rstd::SearchHalt
+RASSERT	RStd.h	152;"	d
+RASSERT	RStd.h	157;"	d
+RCONFIRM	RStd.h	153;"	d
+RCONFIRM	RStd.h	158;"	d
+RDEBUG	RStd.h	151;"	d
+RDEBUG	RStd.h	156;"	d
+REC_VECTOR_H_	RecVector.h	5;"	d
+RGen	RGen.cc	/^RGen::RGen(int seed) :$/;"	f	class:rstd::RGen
+RGen	RGen.h	/^class RGen :$/;"	c	namespace:rstd
+RGen_test	RGen.cc	/^void RGen_test() {$/;"	f	namespace:rstd
+RMath_test	RMath.cc	/^void RMath_test() {$/;"	f	namespace:rstd
+RStd_test	RStd.cc	/^void RStd_test() {$/;"	f	namespace:rstd
+RString_test	RString.cc	/^void RString_test() {$/;"	f	namespace:rstd
+RVector	RVector.h	/^		RVector(InIter first, InIter last) : impl_(first, last) {}$/;"	f	class:rstd::RVector
+RVector	RVector.h	/^		RVector(const RVector<T2> & a) : impl_(a.begin(), a.end()) {}$/;"	f	class:rstd::RVector
+RVector	RVector.h	/^	RVector() : impl_() {}$/;"	f	class:rstd::RVector
+RVector	RVector.h	/^	RVector(size_t n, const T & value) : impl_(n, value) {}$/;"	f	class:rstd::RVector
+RVector	RVector.h	/^	explicit RVector(size_type n) : impl_(n) {}$/;"	f	class:rstd::RVector
+RVector	RVector.h	/^class RVector :$/;"	c	namespace:rstd
+R_ALGO_H_	RAlgo.h	5;"	d
+R_FUNCTIONAL_H_	RFunctional.h	5;"	d
+R_GEN_H_	RGen.h	5;"	d
+R_MATH_H_	RMath.h	5;"	d
+R_PAIR_H_	RPair.h	5;"	d
+R_STD_H_	RStd.h	5;"	d
+R_STRING_H_	RString.h	5;"	d
+R_VECTOR_H_	RVector.h	5;"	d
+Rabort	RStd.h	82;"	d
+Rassert	RStd.h	86;"	d
+RawGraph	Graph.h	/^	RawGraph() : vertex_(), edge_() {}$/;"	f	class:rstd::RawGraph
+RawGraph	Graph.h	/^class RawGraph :$/;"	c	namespace:rstd
+Rdump	RStd.h	91;"	d
+Rdumphex	RStd.h	92;"	d
+RecVector2	RecVector.h	/^	RecVector2() : impl_(), size_(0) {}$/;"	f	class:rstd::RecVector2
+RecVector2	RecVector.h	/^class RecVector2 :$/;"	c	namespace:rstd
+RecVector3	RecVector.h	/^	RecVector3() : size_(0) {}$/;"	f	class:rstd::RecVector3
+RecVector3	RecVector.h	/^class RecVector3 :$/;"	c	namespace:rstd
+RecVector4	RecVector.h	/^	RecVector4() : size_(0) {}$/;"	f	class:rstd::RecVector4
+RecVector4	RecVector.h	/^class RecVector4 :$/;"	c	namespace:rstd
+Resource	PGraph.cc	/^Resource::Resource() :$/;"	f	class:Resource
+Resource	PGraph.h	/^class Resource {$/;"	c
+ResourceAttrib	PGraph.h	/^	ResourceAttrib	(std::string nm, double v) : name_(nm), value_(v) {};$/;"	f	class:ResourceAttrib
+ResourceAttrib	PGraph.h	/^class ResourceAttrib {$/;"	c
+ResourceInstance	PGraph.h	/^	ResourceInstance(std::string nm, unsigned r, double tf)$/;"	f	class:ResourceInstance
+ResourceInstance	PGraph.h	/^class ResourceInstance {$/;"	c
+ResourceUse	PGraph.h	/^	ResourceUse	(std::string nm, double start, double end)$/;"	f	class:ResourceUse
+ResourceUse	PGraph.h	/^class ResourceUse {$/;"	c
+Rpos	RStd.h	74;"	d
+SAME_OR_DERIVED	RStd.h	145;"	d
+SChecks	Interface.h	/^class SChecks : public virtual SChecksBase {$/;"	c	namespace:rstd
+SChecksBase	Interface.h	/^class SChecksBase { protected: ~SChecksBase() {} };$/;"	c	namespace:rstd
+STATIC_ASSERT	RStd.h	97;"	d
+SearchHalt	RAlgo.h	/^	SearchHalt() : val_(0) {}$/;"	f	class:rstd::SearchHalt
+SearchHalt	RAlgo.h	/^	SearchHalt(long x) : val_(x) {}$/;"	f	class:rstd::SearchHalt
+SearchHalt	RAlgo.h	/^class SearchHalt {$/;"	c	namespace:rstd
+SetAttrib	PGraph.cc	/^void Resource::SetAttrib(string n, double v)$/;"	f	class:Resource
+Swaps	Interface.h	/^template <typename> class Swaps : public virtual SwapsBase {$/;"	c	namespace:rstd
+SwapsBase	Interface.h	/^class SwapsBase { protected: ~SwapsBase() {} };$/;"	c	namespace:rstd
+TG	TG.cc	/^TG::TG() :$/;"	f	class:TG
+TG	TG.h	/^class TG : public rstd::Graph<TGnode,TGarc> {$/;"	c
+TG_H_	TG.h	5;"	d
+TGarc	TG.h	/^	TGarc(int n) : name(n), type(-1)	{};	\/\/	{name = n; type = -1;};$/;"	f	class:TGarc
+TGarc	TG.h	/^	TGarc(int n, unsigned t) : name(n), type(t)	{};	\/\/ {name = n; type = t;};$/;"	f	class:TGarc
+TGarc	TG.h	/^	TGarc(void)  : name(-1), type(-1) 	{}; \/\/	{name = -1; type = -1;};$/;"	f	class:TGarc
+TGarc	TG.h	/^class TGarc {$/;"	c
+TGnode	TG.cc	/^TGnode::TGnode() :$/;"	f	class:TGnode
+TGnode	TG.cc	/^TGnode::TGnode(int i) :$/;"	f	class:TGnode
+TGnode	TG.cc	/^TGnode::TGnode(int i, int t, unsigned ri, unsigned ru) :$/;"	f	class:TGnode
+TGnode	TG.h	/^class TGnode {$/;"	c
+TGraph	TGraph.cc	/^TGraph::TGraph(int tg_offset) :$/;"	f	class:TGraph
+TGraph	TGraph.h	/^class TGraph {$/;"	c
+TIMEOUT	RAlgo.h	/^	static const long TIMEOUT = 0x4;$/;"	m	class:rstd::SearchHalt
+TO	Makefile	/^TO := -o$/;"	m
+TTEND	PGraph.cc	76;"	d	file:
+TTSTART	PGraph.cc	75;"	d	file:
+T_GRAPH_H_	TGraph.h	5;"	d
+Triple	RPair.h	/^	Triple() : first(T1()), second(T2()), third(T3()) {}$/;"	f	struct:rstd::Triple
+Triple	RPair.h	/^struct Triple : public Prints<Triple<T1, T2, T3> > {$/;"	s	namespace:rstd
+VERSION	version.h	4;"	d
+WGraph	Graph.h	/^class WGraph :	public Graph<double, double> {$/;"	c	namespace:rstd
+X_max	psprint.cc	/^			X_max, Y_max;$/;"	v	file:
+X_min	psprint.cc	/^static int	X_min, Y_min,	\/\/ actual x\/y mins\/max used (for BB)$/;"	v	file:
+YES	Interface.h	/^	typedef bool YES;$/;"	t	namespace:rstd::COMPARABLE_NS_
+YES	Interface.h	/^	typedef std::ostream & YES;$/;"	t	namespace:rstd::PRINTABLE_NS_
+YES	RStd.h	/^	struct YES { char a; };$/;"	s	struct:rstd::conversion_exists_helper
+Y_max	psprint.cc	/^			X_max, Y_max;$/;"	v	file:
+Y_min	psprint.cc	/^static int	X_min, Y_min,	\/\/ actual x\/y mins\/max used (for BB)$/;"	v	file:
+a	RStd.h	/^	struct NO { char a[5]; };$/;"	m	struct:rstd::conversion_exists_helper::NO
+a	RStd.h	/^	struct YES { char a; };$/;"	m	struct:rstd::conversion_exists_helper::YES
+add_edge	Graph.cc	/^add_edge(const vertex_index from, const vertex_index to) {$/;"	f	class:rstd::RawGraph
+add_start_nodes	TG.cc	/^void TG::add_start_nodes () {$/;"	f	class:TG
+add_vertex	Graph.cc	/^RawGraph::vertex_index RawGraph::add_vertex() {$/;"	f	class:rstd::RawGraph
+allocator_type	RVector.h	/^	typedef typename impl::allocator_type allocator_type;$/;"	t	class:rstd::RVector
+allocator_type	RecVector.h	/^	typedef typename impl::allocator_type allocator_type;$/;"	t	class:rstd::RecVector2
+allocator_type	RecVector.h	/^	typedef typename impl::allocator_type allocator_type;$/;"	t	class:rstd::RecVector3
+allocator_type	RecVector.h	/^	typedef typename impl::allocator_type allocator_type;$/;"	t	class:rstd::RecVector4
+ap	ArgPack.h	/^	static const ArgPack & ap() { RASSERT(def_ap_); return *def_ap_; }$/;"	f	class:ArgPack
+aperiod	TG.h	/^	long aperiod() const {return aperiod_;}$/;"	f	class:TG
+aperiod_	TG.h	/^		long aperiod_;$/;"	m	class:TG
+aperiodic_min_av	ArgPack.h	/^		long aperiodic_min_av;$/;"	m	class:ArgPack
+aperiodic_min_mul	ArgPack.h	/^		long aperiodic_min_mul;$/;"	m	class:ArgPack
+aperiodic_min_used	ArgPack.h	/^		bool aperiodic_min_used;$/;"	m	class:ArgPack
+arc_data_size_	PGraph.h	/^	rstd::RVector<int>				arc_data_size_;$/;"	m	class:PGraph
+argument_type	RFunctional.h	/^	typedef Arg argument_type;$/;"	t	struct:rstd::runary_function
+assign	RVector.h	/^	void assign(size_type n, const T & val) { impl_.assign(n, val); }$/;"	f	class:rstd::RVector
+attrib_	PGraph.h	/^	rstd::RVector<ResourceAttrib>	attrib_;$/;"	m	class:Resource
+attrib_	TG.h	/^	rstd::RVector<double> attrib_;$/;"	m	class:TGnode
+augment	TG.cc	/^void TG::augment() {$/;"	f	class:TG
+back	FVector.h	/^	T & back() { return data_[N - 1]; }$/;"	f	class:rstd::FVector
+back	FVector.h	/^	const T & back() const { return data_[N - 1]; }$/;"	f	class:rstd::FVector
+back	RVector.h	/^	const_reference back() const { return impl_.back(); }$/;"	f	class:rstd::RVector
+back	RVector.h	/^	reference back() { return impl_.back(); }$/;"	f	class:rstd::RVector
+begin	FVector.h	/^	const_iterator begin() const { return data_; }$/;"	f	class:rstd::FVector
+begin	FVector.h	/^	iterator begin() { return data_; }$/;"	f	class:rstd::FVector
+begin	RVector.h	/^	const_iterator begin() const { return impl_.begin(); }$/;"	f	class:rstd::RVector
+begin	RVector.h	/^	iterator begin() { return impl_.begin(); }$/;"	f	class:rstd::RVector
+begin	RecVector.h	/^	const_iterator begin() const { return impl_.begin(); }$/;"	f	class:rstd::RecVector2
+begin	RecVector.h	/^	const_iterator begin() const { return impl_.begin(); }$/;"	f	class:rstd::RecVector3
+begin	RecVector.h	/^	const_iterator begin() const { return impl_.begin(); }$/;"	f	class:rstd::RecVector4
+begin	RecVector.h	/^	iterator begin() { return impl_.begin(); }$/;"	f	class:rstd::RecVector2
+begin	RecVector.h	/^	iterator begin() { return impl_.begin(); }$/;"	f	class:rstd::RecVector3
+begin	RecVector.h	/^	iterator begin() { return impl_.begin(); }$/;"	f	class:rstd::RecVector4
+begin_in	Graph.h	/^		const_edge_iterator begin_in() const { return in_.begin(); }$/;"	f	class:rstd::RawGraph::vertex_type
+begin_in	Graph.h	/^		edge_iterator begin_in() { return in_.begin(); }$/;"	f	class:rstd::RawGraph::vertex_type
+begin_out	Graph.h	/^		const_edge_iterator begin_out() const { return out_.begin(); }$/;"	f	class:rstd::RawGraph::vertex_type
+begin_out	Graph.h	/^		edge_iterator begin_out() { return out_.begin(); }$/;"	f	class:rstd::RawGraph::vertex_type
+bfs	Graph.cc	/^RawGraph::bfs(RVector<vertex_index> start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+bfs	Graph.cc	/^RawGraph::bfs(const vertex_index start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+bfs_recurse	Graph.cc	/^void RawGraph::bfs_recurse(RVector<vertex_index> & vec,$/;"	f	class:rstd::RawGraph
+big_bool	RStd.h	/^typedef int big_bool;$/;"	t	namespace:rstd
+block	Interface.h	/^   struct block {$/;"	s	namespace:rstd::COMPARABLE_NS_
+block	Interface.h	/^   struct block {$/;"	s	namespace:rstd::PRINTABLE_NS_
+boltzmann_trial	RMath.cc	/^bool boltzmann_trial(double old_rank, double new_rank, double temperature) {$/;"	f	namespace:rstd
+boltzmann_trial	RMath.cc	/^bool boltzmann_trial(double old_rank, double new_rank, double temperature,$/;"	f	namespace:rstd
+boltzmann_trial_range01	RMath.cc	/^bool boltzmann_trial_range01(double old_rank, double new_rank,$/;"	f	namespace:rstd
+c	Interface.h	/^	struct NO { char c[65536]; };$/;"	m	struct:rstd::COMPARABLE_NS_::NO
+c	Interface.h	/^	struct NO { char c[65536]; };$/;"	m	struct:rstd::PRINTABLE_NS_::NO
+c_	RGen.h	/^		float c_, cd_, cm_;$/;"	m	class:rstd::RGen
+capacity	RVector.h	/^	size_type capacity() const { return impl_.capacity(); }$/;"	f	class:rstd::RVector
+cd_	RGen.h	/^		float c_, cd_, cm_;$/;"	m	class:rstd::RGen
+cerr_hex_init	RStd.cc	/^	int cerr_hex_init() { cerrhex << hex; return 0; }$/;"	f	namespace:rstd::__anon6
+clear	Graph.cc	/^void RawGraph::clear() {$/;"	f	class:rstd::RawGraph
+clear	RVector.h	/^	void clear() { impl_.clear(); }$/;"	f	class:rstd::RVector
+clear	RecVector.h	/^	void clear() { impl_.clear(); size_[0] = 0; size_[1] = 0; }$/;"	f	class:rstd::RecVector2
+clip	RMath.cc	/^MathVec::clip(value_type low, value_type high) {$/;"	f	class:rstd::MathVec
+clone	Graph.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::Graph
+clone	Graph.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::RawGraph
+clone	HolderPtr.h	/^	self * clone() const { return new self(*this); }$/;"	f	class:rstd::HolderPtr
+clone	RGen.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::RGen
+clone	RVector.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::RVector
+clone	RecVector.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::RecVector2
+clone	RecVector.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::RecVector3
+clone	RecVector.h	/^	virtual self * clone() const { return new self(*this); }$/;"	f	class:rstd::RecVector4
+cm_	RGen.h	/^		float c_, cd_, cm_;$/;"	m	class:rstd::RGen
+com_	PGraph.h	/^	rstd::RVector<Resource>			com_;$/;"	m	class:PGraph
+com_possible	PGraph.cc	/^double com_possible(string aname, double t1, double t2,$/;"	f
+com_soln_	PGraph.h	/^	rstd::RVector<ResourceInstance>	com_soln_;$/;"	m	class:PGraph
+comp	Graph.cc	/^RawGraph::edge_index::comp(const edge_index & a) const {$/;"	f	class:rstd::RawGraph::edge_index
+comp	Graph.cc	/^RawGraph::edge_type::comp(const self & et) const {$/;"	f	class:rstd::RawGraph::edge_type
+comp	Graph.cc	/^RawGraph::vertex_index::comp(const vertex_index & a) const {$/;"	f	class:rstd::RawGraph::vertex_index
+comp	Graph.cc	/^RawGraph::vertex_type::comp(const self & vt) const {$/;"	f	class:rstd::RawGraph::vertex_type
+comp_func	Interface.h	/^template <typename T> struct comp_func {$/;"	s	namespace:rstd
+comp_obj	Interface.h	/^struct comp_obj : public rbinary_function<const T &, const T &, comp_type> {$/;"	s	namespace:rstd
+comp_type	Interface.h	/^enum comp_type { LESS = -1, EQ = 0, GREATER = 1 };$/;"	g	namespace:rstd
+comparable	Interface.h	/^	struct comparable {$/;"	s	namespace:rstd::COMPARABLE_NS_
+compute_dims	TG.cc	/^void TG::compute_dims() {$/;"	f	class:TG
+connected	Graph.cc	/^connected(const vertex_index start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+const_edge_iterator	Graph.h	/^		typedef RVector<edge_index>::const_iterator const_edge_iterator;$/;"	t	class:rstd::RawGraph::vertex_type
+const_edge_iterator	Graph.h	/^	typedef e_impl::const_iterator const_edge_iterator;$/;"	t	class:rstd::RawGraph
+const_edge_reference	Graph.h	/^	typedef e_impl::const_reference const_edge_reference;$/;"	t	class:rstd::RawGraph
+const_iterator	FVector.h	/^	typedef const T * const_iterator;$/;"	t	class:rstd::FVector
+const_iterator	RVector.h	/^	typedef typename impl::const_iterator const_iterator;$/;"	t	class:rstd::RVector
+const_iterator	RecVector.h	/^	typedef typename impl::const_iterator const_iterator;$/;"	t	class:rstd::RecVector2
+const_iterator	RecVector.h	/^	typedef typename impl::const_iterator const_iterator;$/;"	t	class:rstd::RecVector3
+const_iterator	RecVector.h	/^	typedef typename impl::const_iterator const_iterator;$/;"	t	class:rstd::RecVector4
+const_pointer	FVector.h	/^	typedef const T * const_pointer;$/;"	t	class:rstd::FVector
+const_pointer	RVector.h	/^	typedef typename impl::const_pointer const_pointer;$/;"	t	class:rstd::RVector
+const_pointer	RecVector.h	/^	typedef typename impl::const_pointer const_pointer;$/;"	t	class:rstd::RecVector2
+const_pointer	RecVector.h	/^	typedef typename impl::const_pointer const_pointer;$/;"	t	class:rstd::RecVector3
+const_pointer	RecVector.h	/^	typedef typename impl::const_pointer const_pointer;$/;"	t	class:rstd::RecVector4
+const_reference	FVector.h	/^	typedef const T & const_reference;$/;"	t	class:rstd::FVector
+const_reference	RVector.h	/^	typedef typename impl::const_reference const_reference;$/;"	t	class:rstd::RVector
+const_reference	RVector.h	/^	typedef typename super::const_reference const_reference;$/;"	t	class:rstd::MVector
+const_reference	RecVector.h	/^	typedef typename impl::const_reference const_reference;$/;"	t	class:rstd::RecVector2
+const_reference	RecVector.h	/^	typedef typename impl::const_reference const_reference;$/;"	t	class:rstd::RecVector3
+const_reference	RecVector.h	/^	typedef typename impl::const_reference const_reference;$/;"	t	class:rstd::RecVector4
+const_reverse_edge_iterator	Graph.h	/^	typedef e_impl::const_reverse_iterator const_reverse_edge_iterator;$/;"	t	class:rstd::RawGraph
+const_reverse_iterator	FVector.h	/^	typedef std::reverse_iterator<const_iterator> const_reverse_iterator;$/;"	t	class:rstd::FVector
+const_reverse_iterator	RVector.h	/^	typedef typename impl::const_reverse_iterator const_reverse_iterator;$/;"	t	class:rstd::RVector
+const_reverse_iterator	RecVector.h	/^	typedef typename impl::const_reverse_iterator const_reverse_iterator;$/;"	t	class:rstd::RecVector2
+const_reverse_iterator	RecVector.h	/^	typedef typename impl::const_reverse_iterator const_reverse_iterator;$/;"	t	class:rstd::RecVector3
+const_reverse_iterator	RecVector.h	/^	typedef typename impl::const_reverse_iterator const_reverse_iterator;$/;"	t	class:rstd::RecVector4
+const_reverse_vertex_iterator	Graph.h	/^	typedef v_impl::const_reverse_iterator const_reverse_vertex_iterator;$/;"	t	class:rstd::RawGraph
+const_vertex_iterator	Graph.h	/^	typedef v_impl::const_iterator const_vertex_iterator;$/;"	t	class:rstd::RawGraph
+const_vertex_reference	Graph.h	/^	typedef v_impl::const_reference const_vertex_reference;$/;"	t	class:rstd::RawGraph
+conversion_exists	RStd.h	/^struct conversion_exists {$/;"	s	namespace:rstd
+conversion_exists_helper	RStd.h	/^struct conversion_exists_helper {$/;"	s	namespace:rstd
+convert	RString.cc	/^	T convert(const string & s) {$/;"	f	namespace:rstd::__anon3
+convert	RString.cc	/^	bool convert<bool>(const string & s) {$/;"	f	namespace:rstd::__anon3
+cost_of_soln_	PGraph.h	/^	double						cost_of_soln_;$/;"	m	class:PGraph
+cout_hex_init	RStd.cc	/^	int cout_hex_init() { couthex << hex; return 0; }$/;"	f	namespace:rstd::__anon6
+cyclic	Graph.cc	/^bool RawGraph::cyclic() const {$/;"	f	class:rstd::RawGraph
+cyclic_recurse	Graph.cc	/^bool RawGraph::cyclic_recurse(RVector<big_bool> & visited,$/;"	f	class:rstd::RawGraph
+dag_	PGraph.h	/^	rstd::RVector<TG>				dag_; $/;"	m	class:PGraph
+dag_	TGraph.h	/^		rstd::RVector<TG> dag_; $/;"	m	class:TGraph
+data_	FVector.h	/^		T data_[N];$/;"	m	class:rstd::FVector
+data_	HolderPtr.h	/^		T * data_;$/;"	m	class:rstd::HolderPtr
+data_file_name	ArgPack.h	/^		std::string data_file_name;$/;"	m	class:ArgPack
+data_out_	ArgPack.h	/^		std::ostringstream data_out_;$/;"	m	class:ArgPack
+deadline	TG.h	/^	double		deadline;$/;"	m	class:TGnode
+deadline_jitter	ArgPack.h	/^		double deadline_jitter;$/;"	m	class:ArgPack
+deadlines	TG.cc	/^void TG::deadlines() {$/;"	f	class:TG
+def_ap_	ArgPack.h	/^		static ArgPack * def_ap_;$/;"	m	class:ArgPack
+deref_equal_to	RFunctional.h	/^struct deref_equal_to : public rbinary_function<const T *, const T *, bool> {$/;"	s	namespace:rstd
+deref_less	RFunctional.h	/^struct deref_less : public rbinary_function<const T *, const T *, bool> {$/;"	s	namespace:rstd
+dfs	Graph.cc	/^RawGraph::dfs(RVector<vertex_index> start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+dfs	Graph.cc	/^dfs(const vertex_index start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+dfs_recurse	Graph.cc	/^void RawGraph::dfs_recurse(RVector<vertex_index> & vec,$/;"	f	class:rstd::RawGraph
+difference_type	FVector.h	/^	typedef ptrdiff_t difference_type;$/;"	t	class:rstd::FVector
+difference_type	Graph.h	/^	typedef ptrdiff_t difference_type;$/;"	t	class:rstd::RawGraph
+difference_type	RVector.h	/^	typedef typename impl::difference_type difference_type;$/;"	t	class:rstd::RVector
+difference_type	RecVector.h	/^	typedef typename impl::difference_type difference_type;$/;"	t	class:rstd::RecVector2
+difference_type	RecVector.h	/^	typedef typename impl::difference_type difference_type;$/;"	t	class:rstd::RecVector3
+difference_type	RecVector.h	/^	typedef typename impl::difference_type difference_type;$/;"	t	class:rstd::RecVector4
+dim_index	RVector.h	/^		T & dim_index(const IT * i) { return (*this)[*i]; }$/;"	f	class:rstd::MVector
+dim_index	RVector.h	/^		const T & dim_index(const IT * i) const { return (*this)[*i]; }$/;"	f	class:rstd::MVector
+e_data_	Graph.h	/^		RVector<E> e_data_;$/;"	m	class:rstd::Graph
+e_impl	Graph.h	/^	typedef RVector<edge_type> e_impl;$/;"	t	class:rstd::RawGraph
+edge_	Graph.h	/^		e_impl edge_;$/;"	m	class:rstd::RawGraph
+edge_begin	Graph.h	/^	const_edge_iterator edge_begin() const { return edge_.begin(); }$/;"	f	class:rstd::RawGraph
+edge_begin	Graph.h	/^	edge_iterator edge_begin() { return edge_.begin(); }$/;"	f	class:rstd::RawGraph
+edge_end	Graph.h	/^	const_edge_iterator edge_end() const { return edge_.end(); }$/;"	f	class:rstd::RawGraph
+edge_end	Graph.h	/^	edge_iterator edge_end() { return edge_.end(); }$/;"	f	class:rstd::RawGraph
+edge_index	Graph.h	/^		edge_index(long indx) : index_(indx) {}$/;"	f	class:rstd::RawGraph::edge_index
+edge_index	Graph.h	/^	class edge_index :$/;"	c	class:rstd::RawGraph
+edge_iterator	Graph.h	/^		typedef RVector<edge_index>::iterator edge_iterator;$/;"	t	class:rstd::RawGraph::vertex_type
+edge_iterator	Graph.h	/^	typedef e_impl::iterator edge_iterator;$/;"	t	class:rstd::RawGraph
+edge_rbegin	Graph.h	/^	const_reverse_edge_iterator edge_rbegin() const { return edge_.rbegin(); }$/;"	f	class:rstd::RawGraph
+edge_rbegin	Graph.h	/^	reverse_edge_iterator edge_rbegin() { return edge_.rbegin(); }$/;"	f	class:rstd::RawGraph
+edge_reference	Graph.h	/^	typedef e_impl::reference edge_reference;$/;"	t	class:rstd::RawGraph
+edge_rend	Graph.h	/^	const_reverse_edge_iterator edge_rend() const { return edge_.rend(); }$/;"	f	class:rstd::RawGraph
+edge_rend	Graph.h	/^	reverse_edge_iterator edge_rend() { return edge_.rend(); }$/;"	f	class:rstd::RawGraph
+edge_type	Graph.h	/^	class edge_type :$/;"	c	class:rstd::RawGraph
+edge_weight	Graph.cc	/^RawGraph::edge_weight(edge_index \/* e *\/) const {$/;"	f	class:rstd::RawGraph
+edge_weight	Graph.cc	/^WGraph::edge_weight(edge_index e) const {$/;"	f	class:rstd::WGraph
+element_type	HolderPtr.h	/^	typedef T element_type;$/;"	t	class:rstd::HolderPtr
+empty	RVector.h	/^	bool empty() const { return impl_.empty(); }$/;"	f	class:rstd::RVector
+empty	RecVector.h	/^	bool empty() const { return impl_.empty(); }$/;"	f	class:rstd::RecVector2
+empty	RecVector.h	/^	bool empty() const { return impl_.empty(); }$/;"	f	class:rstd::RecVector3
+empty	RecVector.h	/^	bool empty() const { return impl_.empty(); }$/;"	f	class:rstd::RecVector4
+end	FVector.h	/^	const_iterator end() const { return data_ + N; }$/;"	f	class:rstd::FVector
+end	FVector.h	/^	iterator end() { return data_ + N; }$/;"	f	class:rstd::FVector
+end	RVector.h	/^	const_iterator end() const { return impl_.end(); }$/;"	f	class:rstd::RVector
+end	RVector.h	/^	iterator end() { return impl_.end(); }$/;"	f	class:rstd::RVector
+end	RecVector.h	/^	const_iterator end() const { return impl_.end(); }$/;"	f	class:rstd::RecVector2
+end	RecVector.h	/^	const_iterator end() const { return impl_.end(); }$/;"	f	class:rstd::RecVector3
+end	RecVector.h	/^	const_iterator end() const { return impl_.end(); }$/;"	f	class:rstd::RecVector4
+end	RecVector.h	/^	iterator end() { return impl_.end(); }$/;"	f	class:rstd::RecVector2
+end	RecVector.h	/^	iterator end() { return impl_.end(); }$/;"	f	class:rstd::RecVector3
+end	RecVector.h	/^	iterator end() { return impl_.end(); }$/;"	f	class:rstd::RecVector4
+end_in	Graph.h	/^		const_edge_iterator end_in() const { return in_.end(); }$/;"	f	class:rstd::RawGraph::vertex_type
+end_in	Graph.h	/^		edge_iterator end_in() { return in_.end(); }$/;"	f	class:rstd::RawGraph::vertex_type
+end_out	Graph.h	/^		const_edge_iterator end_out() const { return out_.end(); }$/;"	f	class:rstd::RawGraph::vertex_type
+end_out	Graph.h	/^		edge_iterator end_out() { return out_.end(); }$/;"	f	class:rstd::RawGraph::vertex_type
+entries_per_type_av	ArgPack.h	/^		double entries_per_type_av;$/;"	m	class:ArgPack
+entries_per_type_mul	ArgPack.h	/^		double entries_per_type_mul;$/;"	m	class:ArgPack
+eps_comp_obj	Epsilon.h	/^	eps_comp_obj() : lt_(eps_less<T, REF_EXP>()) {}$/;"	f	class:rstd::eps_comp_obj
+eps_comp_obj	Epsilon.h	/^class eps_comp_obj {$/;"	c	namespace:rstd
+eps_dec	Epsilon.h	/^struct eps_dec : runary_function<const T &, T> {$/;"	s	namespace:rstd
+eps_equal_to	Epsilon.h	/^struct eps_equal_to : rbinary_function<const T &, const T &, bool> {$/;"	s	namespace:rstd
+eps_file_name	ArgPack.h	/^		std::string eps_file_name;$/;"	m	class:ArgPack
+eps_greater	Epsilon.h	/^struct eps_greater : rbinary_function<const T &, const T &, bool> {$/;"	s	namespace:rstd
+eps_greater_equal	Epsilon.h	/^struct eps_greater_equal : rbinary_function<const T &, const T &, bool> {$/;"	s	namespace:rstd
+eps_inc	Epsilon.h	/^struct eps_inc : runary_function<const T &, T> {$/;"	s	namespace:rstd
+eps_less	Epsilon.h	/^struct eps_less : rbinary_function<const T &, const T &, bool> {$/;"	s	namespace:rstd
+eps_less_equal	Epsilon.h	/^struct eps_less_equal : rbinary_function<const T &, const T &, bool> {$/;"	s	namespace:rstd
+eps_not_equal_to	Epsilon.h	/^struct eps_not_equal_to : rbinary_function<const T &, const T &, bool> {$/;"	s	namespace:rstd
+eps_out_	ArgPack.h	/^		std::ofstream eps_out_;$/;"	m	class:ArgPack
+equal_to_1st	RPair.h	/^	struct equal_to_1st : public rbinary_function<Pair, Pair, bool>$/;"	s	namespace:rstd
+equal_to_2nd	RPair.h	/^	struct equal_to_2nd : public rbinary_function<Pair, Pair, bool>$/;"	s	namespace:rstd
+equal_to_3rd	RPair.h	/^	struct equal_to_3rd : public rbinary_function<Triple, Triple, bool>$/;"	s	namespace:rstd
+equal_to_4th	RPair.h	/^	struct equal_to_4th : public rbinary_function<Quad, Quad, bool>$/;"	s	namespace:rstd
+erase	RVector.h	/^	iterator erase(iterator a) { return impl_.erase(a); }$/;"	f	class:rstd::RVector
+erase	RVector.h	/^	iterator erase(iterator a, iterator b) { return impl_.erase(a, b); }$/;"	f	class:rstd::RVector
+erase_edge	Graph.cc	/^void RawGraph::erase_edge(const edge_index i) {$/;"	f	class:rstd::RawGraph
+erase_vertex	Graph.cc	/^void RawGraph::erase_vertex(const vertex_index i) {$/;"	f	class:rstd::RawGraph
+exec_time_	PGraph.h	/^	rstd::RVector<double>			exec_time_;	\/\/ for PE resources only$/;"	m	class:Resource
+f_width_	DBase.h	/^		std::size_t f_width_;$/;"	m	class:DBase
+finite	RMath.cc	/^bool finite(double x) {$/;"	f	namespace:rstd::__anon5
+first	RPair.h	/^		T1 first;$/;"	m	struct:rstd::Quad
+first	RPair.h	/^		T1 first;$/;"	m	struct:rstd::Triple
+first_argument_type	RFunctional.h	/^	typedef Arg1 first_argument_type;$/;"	t	struct:rstd::rbinary_function
+first_task_	TG.h	/^		int first_task_;$/;"	m	class:TG
+first_token	RString.cc	/^const string first_token(const string & s, const char * delim) {$/;"	f	namespace:rstd
+first_type	RPair.h	/^	typedef T1 first_type;$/;"	t	struct:rstd::Quad
+first_type	RPair.h	/^	typedef T1 first_type;$/;"	t	struct:rstd::Triple
+flat01	RGen.cc	/^double RGen::flat01() {$/;"	f	class:rstd::RGen
+flat_merge	RMath.cc	/^flat_merge(double alpha, const double a, const double b) {$/;"	f	namespace:rstd
+flat_mul	RMath.cc	/^MathVec::flat_mul(const MathVec & a) {$/;"	f	class:rstd::MathVec
+flat_mul	RMath.cc	/^MathVec::flat_mul(const value_type & a) {$/;"	f	class:rstd::MathVec
+flat_range_d	RGen.cc	/^double RGen::flat_range_d(double low, double high) {$/;"	f	class:rstd::RGen
+flat_range_l	RGen.cc	/^long RGen::flat_range_l(long low, long high) {$/;"	f	class:rstd::RGen
+flip	RGen.cc	/^bool RGen::flip(double cut_off) {$/;"	f	class:rstd::RGen
+fourth	RPair.h	/^		T4 fourth;$/;"	m	struct:rstd::Quad
+fourth_type	RPair.h	/^	typedef T4 fourth_type;$/;"	t	struct:rstd::Quad
+from	Graph.h	/^		vertex_index from() const { return from_; }$/;"	f	class:rstd::RawGraph::edge_type
+from_	Graph.h	/^			vertex_index from_;$/;"	m	class:rstd::RawGraph::edge_type
+front	FVector.h	/^	T & front() { return *data_; }$/;"	f	class:rstd::FVector
+front	FVector.h	/^	const T & front() const { return *data_; }$/;"	f	class:rstd::FVector
+front	RVector.h	/^	const_reference front() const { return impl_.front(); }$/;"	f	class:rstd::RVector
+front	RVector.h	/^	reference front() { return impl_.front(); }$/;"	f	class:rstd::RVector
+func	Interface.h	/^	typedef comp_type (*func)(const T & a, const T & b);$/;"	t	struct:rstd::comp_func
+gauss01	RGen.cc	/^double RGen::gauss01() {$/;"	f	class:rstd::RGen
+gauss_mean_d	RGen.cc	/^double RGen::gauss_mean_d(double mean, double variance) {$/;"	f	class:rstd::RGen
+gauss_mean_half_d	RGen.cc	/^double RGen::gauss_mean_half_d(double mean, double variance) {$/;"	f	class:rstd::RGen
+gauss_mean_half_l	RGen.cc	/^long RGen::gauss_mean_half_l(long mean, double variance) {$/;"	f	class:rstd::RGen
+gauss_mean_l	RGen.cc	/^long RGen::gauss_mean_l(long mean, double variance) {$/;"	f	class:rstd::RGen
+gcd	RMath.cc	/^double gcd(const RVector<double> & num, double ref) {$/;"	f	namespace:rstd
+gcd	RMath.cc	/^static inline double gcd(double m, double n, double ref) {$/;"	f	namespace:rstd
+gcd	RMath.cc	/^unsigned gcd(const RVector<unsigned> & num) {$/;"	f	namespace:rstd
+gcd	RMath.cc	/^unsigned gcd(unsigned m, unsigned n) {$/;"	f	namespace:rstd::__anon5
+gen	RGen.cc	/^RGen::gen() {$/;"	f	class:rstd::RGen
+gen_confirm	RGen.cc	/^void gen_confirm(double a, double b) {$/;"	f	namespace:rstd::__anon4
+gen_series_parallel	ArgPack.h	/^		bool gen_series_parallel;$/;"	m	class:ArgPack
+gen_test_data	RGen.cc	/^void RGen::gen_test_data(ostream & os) {$/;"	f	class:rstd::RGen
+generate_series_parallel	TG.cc	/^void TG::generate_series_parallel()$/;"	f	class:TG
+get	HolderPtr.h	/^	T * get() const throw () { return data_; }$/;"	f	class:rstd::HolderPtr
+h	TG.h	/^	int			h, w;$/;"	m	class:TGnode
+h_period	PGraph.h	/^	double h_period() const {return h_period_;}$/;"	f	class:PGraph
+h_period	TGraph.h	/^	double h_period() const { return h_period_; }$/;"	f	class:TGraph
+h_period_	PGraph.h	/^	double h_period_;		\/\/ only non-periodic now, keep for future$/;"	m	class:PGraph
+h_period_	TGraph.h	/^		double h_period_;$/;"	m	class:TGraph
+hard	TG.h	/^	bool		hard;$/;"	m	class:TGnode
+help_	ArgPack.cc	/^const char * ArgPack::help_ =$/;"	m	class:ArgPack	file:
+help_	ArgPack.h	/^		static const char * help_;$/;"	m	class:ArgPack
+i_PS_arc	psprint.cc	/^static void i_PS_arc(ostream& os, const RVector<TG> &dag, int fmaxw,$/;"	f	file:
+i_PS_dag	psprint.cc	/^static void i_PS_dag(ostream& os, const RVector<TG> &dag, int fsize) {$/;"	f	file:
+i_PS_deadline	psprint.cc	/^static void i_PS_deadline(ostream& os, const RVector<TG> &dag, int fmaxw,$/;"	f	file:
+i_PS_locnode	psprint.cc	/^static void i_PS_locnode(int maxw, int maxh, int fsize, int indx,$/;"	f	file:
+i_PS_node	psprint.cc	/^static void i_PS_node(ostream& os, const RVector<TG> &dag, int fmaxw,$/;"	f	file:
+impl	RVector.h	/^	typedef std::vector<T> impl;$/;"	t	class:rstd::RVector
+impl	RecVector.h	/^	typedef RVector<T> impl;$/;"	t	class:rstd::RecVector2
+impl	RecVector.h	/^	typedef RVector<T> impl;$/;"	t	class:rstd::RecVector3
+impl	RecVector.h	/^	typedef RVector<T> impl;$/;"	t	class:rstd::RecVector4
+impl_	RVector.h	/^		impl impl_;$/;"	m	class:rstd::RVector
+impl_	RecVector.h	/^		impl impl_;$/;"	m	class:rstd::RecVector2
+impl_	RecVector.h	/^		impl impl_;$/;"	m	class:rstd::RecVector3
+impl_	RecVector.h	/^		impl impl_;$/;"	m	class:rstd::RecVector4
+in	Graph.h	/^		edge_index in(long i) const { return in_[i]; }$/;"	f	class:rstd::RawGraph::vertex_type
+in_	Graph.h	/^			RVector<edge_index> in_;$/;"	m	class:rstd::RawGraph::vertex_type
+in_arc_ok	PGraph.cc	/^bool in_arc_ok(TG& dag, long node)$/;"	f	file:
+in_deg	TG.h	/^	int in_deg() const {return in_deg_;}$/;"	f	class:TG
+in_deg_	TG.h	/^		int in_deg_;$/;"	m	class:TG
+in_range	PGraph.cc	/^bool in_range(double v, double range_low, double range_hgh)$/;"	f	file:
+index_	Graph.h	/^			long index_;$/;"	m	class:rstd::RawGraph::edge_index
+index_	Graph.h	/^			long index_;$/;"	m	class:rstd::RawGraph::vertex_index
+init	TG.cc	/^void TG::init(int low_bound, int in_deg_req, int out_deg_req, int number,$/;"	f	class:TG
+init	TG.cc	/^void TG::init(int number, int in_deg_req, int out_deg_req, double period_req) {$/;"	f	class:TG
+insen_equal_to	RString.h	/^	struct insen_equal_to : rbinary_function<const T &, const T &, bool>$/;"	s	namespace:rstd
+insen_equal_to	RString.h	/^	struct insen_equal_to<char>$/;"	s	namespace:rstd
+insen_equal_to	RString.h	/^	struct insen_equal_to<std::string>$/;"	s	namespace:rstd
+insen_less	RString.h	/^	struct insen_less : rbinary_function<const T &, const T &, bool>$/;"	s	namespace:rstd
+insen_less	RString.h	/^	struct insen_less<char>$/;"	s	namespace:rstd
+insen_less	RString.h	/^	struct insen_less<std::string>$/;"	s	namespace:rstd
+insert	RVector.h	/^	T * insert(iterator pos) { return impl_.insert(pos); }$/;"	f	class:rstd::RVector
+int_to_type	RStd.h	/^struct int_to_type {$/;"	s	namespace:rstd
+ip_	RGen.h	/^		int ip_, jp_;$/;"	m	class:rstd::RGen
+iterator	FVector.h	/^	typedef T * iterator;$/;"	t	class:rstd::FVector
+iterator	RVector.h	/^	typedef typename impl::iterator iterator;$/;"	t	class:rstd::RVector
+iterator	RecVector.h	/^	typedef typename impl::iterator iterator;$/;"	t	class:rstd::RecVector2
+iterator	RecVector.h	/^	typedef typename impl::iterator iterator;$/;"	t	class:rstd::RecVector3
+iterator	RecVector.h	/^	typedef typename impl::iterator iterator;$/;"	t	class:rstd::RecVector4
+jp_	RGen.h	/^		int ip_, jp_;$/;"	m	class:rstd::RGen
+lambert	RMath.cc	/^lambert(const double z) {$/;"	f	namespace:rstd
+lambert_ddz	RMath.cc	/^lambert_ddz(const double z) {$/;"	f	namespace:rstd
+lcm	RMath.cc	/^double lcm(const RVector<double> & num, double ref) {$/;"	f	namespace:rstd
+lcm	RMath.cc	/^static double lcm(double i, double j, double ref) {$/;"	f	namespace:rstd
+lcm	RMath.cc	/^static inline unsigned lcm(unsigned i, unsigned j) {$/;"	f	namespace:rstd
+lcm	RMath.cc	/^unsigned lcm(const RVector<unsigned> & num) {$/;"	f	namespace:rstd
+less_1st	RPair.h	/^	struct less_1st : public rbinary_function<Pair, Pair, bool>$/;"	s	namespace:rstd
+less_2nd	RPair.h	/^	struct less_2nd : public rbinary_function<Pair, Pair, bool>$/;"	s	namespace:rstd
+less_3rd	RPair.h	/^	struct less_3rd : public rbinary_function<Triple, Triple, bool>$/;"	s	namespace:rstd
+less_4th	RPair.h	/^	struct less_4th : public rbinary_function<Quad, Quad, bool>$/;"	s	namespace:rstd
+low_bound_	TG.h	/^		int low_bound_;$/;"	m	class:TG
+lt_	Epsilon.h	/^		eps_less<T, REF_EXP> lt_;$/;"	m	class:rstd::eps_comp_obj
+mag	RMath.cc	/^MathVec::mag() const {$/;"	f	class:rstd::MathVec
+main	main.cc	/^int main(int argc, char *argv[]) {$/;"	f
+max_depth	Graph.cc	/^RawGraph::max_depth(const RVector<vertex_index> & start,$/;"	f	class:rstd::RawGraph
+max_depth	Graph.cc	/^RawGraph::max_depth(const vertex_index start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+max_depth_recurse	Graph.cc	/^void RawGraph::max_depth_recurse(RVector<int> & vec,$/;"	f	class:rstd::RawGraph
+max_dimen	RMath.cc	/^max_dimen(RVector<MathVec> & vec) {$/;"	f	namespace:rstd
+max_h	TG.h	/^	int max_h() const {return maxh;}$/;"	f	class:TG
+max_size	RVector.h	/^	size_type max_size() const { return std::numeric_limits<size_type>::max(); }$/;"	f	class:rstd::RVector
+max_w	TG.h	/^	int max_w() const {return maxw;}$/;"	f	class:TG
+maxh	TG.h	/^		int maxh;$/;"	m	class:TG
+maxw	TG.h	/^		int maxw;$/;"	m	class:TG
+min_dimen	RMath.cc	/^min_dimen(RVector<MathVec> & vec) {$/;"	f	namespace:rstd
+misc_type_cnt	ArgPack.h	/^		int misc_type_cnt;$/;"	m	class:ArgPack
+name	TG.h	/^	int			name;$/;"	m	class:TGnode
+name	TG.h	/^	int name;$/;"	m	class:TGarc
+name_	PGraph.h	/^	std::string					name_;$/;"	m	class:Resource
+name_	PGraph.h	/^	std::string					name_;$/;"	m	class:ResourceInstance
+name_	PGraph.h	/^	std::string	name_;$/;"	m	class:ResourceUse
+name_	PGraph.h	/^	std::string  name_;$/;"	m	class:ResourceAttrib
+nodes_linked	Graph.cc	/^nodes_linked (vertex_index a, vertex_index b) const {$/;"	f	class:rstd::RawGraph
+normalize	RMath.cc	/^MathVec::normalize(value_type magnitude) {$/;"	f	class:rstd::MathVec
+normalize	RMath.cc	/^void normalize(RVector<MathVec> & vec) {$/;"	f	namespace:rstd
+num_start_nodes_	TG.h	/^		int num_start_nodes_;$/;"	m	class:TG
+number_	TG.h	/^		int number_;$/;"	m	class:TG
+operator ()	Graph.h	/^	E & operator()(edge_index i) { return e_data_[i]; }$/;"	f	class:rstd::Graph
+operator ()	Graph.h	/^	const E & operator()(edge_index i) const { return e_data_[i]; }$/;"	f	class:rstd::Graph
+operator ()	RFunctional.h	/^	bool operator()(const T * a, const T * b) { return *a < *b; }$/;"	f	struct:rstd::deref_less
+operator ()	RFunctional.h	/^	bool operator()(const T * a, const T * b) { return *a == *b; }$/;"	f	struct:rstd::deref_equal_to
+operator ()	RFunctional.h	/^	{ T & operator()(T * x) { return *x; } };$/;"	f	struct:rstd::ptr_dereference
+operator ()	RFunctional.h	/^	{ T * operator()(T & x) { return &x; } };$/;"	f	struct:rstd::ptr_reference
+operator ()	RGen.cc	/^int RGen::operator()(int ceiling) {$/;"	f	class:rstd::RGen
+operator ()	RString.cc	/^insen_equal_to<string>::operator()(const string & a, const string & b) const {$/;"	f	class:rstd::insen_equal_to
+operator ()	RString.cc	/^insen_less<string>::operator()(const string & a, const string & b) const {$/;"	f	class:rstd::insen_less
+operator *	HolderPtr.h	/^	T & operator*() const throw () { return *data_; }$/;"	f	class:rstd::HolderPtr
+operator *	RMath.cc	/^MathVec::operator*(const MathVec & a) const {$/;"	f	class:rstd::MathVec
+operator *	RMath.cc	/^operator*(const RVector<MathVec> & a,$/;"	f	namespace:rstd
+operator ++	Graph.h	/^		edge_index & operator++() { index_++; return *this; }$/;"	f	class:rstd::RawGraph::edge_index
+operator ++	Graph.h	/^		vertex_index & operator++() { index_++; return *this; }$/;"	f	class:rstd::RawGraph::vertex_index
+operator +=	RMath.cc	/^MathVec::operator+=(const MathVec & a) {$/;"	f	class:rstd::MathVec
+operator +=	RMath.cc	/^MathVec::operator+=(const value_type & a) {$/;"	f	class:rstd::MathVec
+operator --	Graph.h	/^		edge_index & operator--() { index_--; return *this; }$/;"	f	class:rstd::RawGraph::edge_index
+operator --	Graph.h	/^		vertex_index & operator--() { index_--; return *this; }$/;"	f	class:rstd::RawGraph::vertex_index
+operator -=	RMath.cc	/^MathVec::operator-=(const MathVec & a) {$/;"	f	class:rstd::MathVec
+operator -=	RMath.cc	/^MathVec::operator-=(const value_type & a) {$/;"	f	class:rstd::MathVec
+operator ->	HolderPtr.h	/^	T * operator->() const throw () { return data_; }$/;"	f	class:rstd::HolderPtr
+operator /=	RMath.cc	/^MathVec::operator\/=(const MathVec & a) {$/;"	f	class:rstd::MathVec
+operator /=	RMath.cc	/^MathVec::operator\/=(const value_type & a) {$/;"	f	class:rstd::MathVec
+operator <<	Interface.cc	/^operator<<(ostream & os, comp_type c) {$/;"	f	namespace:rstd
+operator <<	PGraph.h	/^	friend std::ostream &operator<<(std::ostream &os, \/**\/ const Resource &r)$/;"	f	class:Resource
+operator <<	PGraph.h	/^	friend std::ostream &operator<<(std::ostream &os, \/**\/const ResourceUse &ru)$/;"	f	class:ResourceUse
+operator <<	PGraph.h	/^	friend std::ostream &operator<<(std::ostream &os,const ResourceInstance &ri)$/;"	f	class:ResourceInstance
+operator =	Graph.cc	/^RawGraph::operator=(const self & a) {$/;"	f	class:rstd::RawGraph
+operator []	Graph.h	/^	V & operator[](vertex_index i) { return v_data_[i]; }$/;"	f	class:rstd::Graph
+operator []	Graph.h	/^	const V & operator[](vertex_index i) const { return v_data_[i]; }$/;"	f	class:rstd::Graph
+operator []	RVector.h	/^	T & operator[](size_type a) { return super::operator[](a); }$/;"	f	class:rstd::MVector
+operator []	RVector.h	/^	const T & operator[](size_type a) const { return super::operator[](a); }$/;"	f	class:rstd::MVector
+operator []	RVector.h	/^	reference operator[](size_type a) { return super::operator[](a); }$/;"	f	class:rstd::MVector
+operator bool	RString.cc	/^Conv::operator bool()$/;"	f	class:rstd::Conv
+operator double	RString.cc	/^Conv::operator double()$/;"	f	class:rstd::Conv
+operator float	RString.cc	/^Conv::operator float()$/;"	f	class:rstd::Conv
+operator int	RString.cc	/^Conv::operator int()$/;"	f	class:rstd::Conv
+operator long	Graph.h	/^		operator long() const { return index_; }$/;"	f	class:rstd::RawGraph::edge_index
+operator long	Graph.h	/^		operator long() const { return index_; }$/;"	f	class:rstd::RawGraph::vertex_index
+operator long	RAlgo.h	/^	operator long() const { return val_; }$/;"	f	class:rstd::SearchHalt
+operator long	RString.cc	/^Conv::operator long()$/;"	f	class:rstd::Conv
+operator short	RString.cc	/^Conv::operator short()$/;"	f	class:rstd::Conv
+operator signed char	RString.cc	/^Conv::operator signed char()$/;"	f	class:rstd::Conv
+operator unsigned	RString.cc	/^Conv::operator unsigned()$/;"	f	class:rstd::Conv
+operator unsigned char	RString.cc	/^Conv::operator unsigned char()$/;"	f	class:rstd::Conv
+operator unsigned long	RString.cc	/^Conv::operator unsigned long()$/;"	f	class:rstd::Conv
+operator unsigned short	RString.cc	/^Conv::operator unsigned short()$/;"	f	class:rstd::Conv
+opt_file_name	ArgPack.h	/^		std::string opt_file_name;$/;"	m	class:ArgPack
+opt_in_	ArgPack.h	/^		std::ifstream opt_in_;$/;"	m	class:ArgPack
+orig_type	RStd.h	/^	typedef T orig_type;$/;"	t	struct:rstd::type_to_type
+out	Graph.h	/^		edge_index out(long i) const { return out_[i]; }$/;"	f	class:rstd::RawGraph::vertex_type
+out_	Graph.h	/^			RVector<edge_index> out_;$/;"	m	class:rstd::RawGraph::vertex_type
+out_arc_ok	PGraph.cc	/^bool out_arc_ok(TG& dag, long node)$/;"	f	file:
+out_deg	TG.h	/^	int out_deg() const {return out_deg_;}$/;"	f	class:TG
+out_deg_	TG.h	/^		int out_deg_;$/;"	m	class:TG
+outward_crawl	Graph.cc	/^RawGraph::outward_crawl(const vertex_index start) const {$/;"	f	class:rstd::RawGraph::RawGraph
+outward_crawl_recurse	Graph.cc	/^void RawGraph::outward_crawl_recurse(RVector<vertex_index> & vec,$/;"	f	class:rstd::RawGraph
+p_greater_deadline	ArgPack.h	/^		bool p_greater_deadline;$/;"	m	class:ArgPack
+p_laxity	ArgPack.h	/^		double p_laxity;$/;"	m	class:ArgPack
+pack_memory	Graph.cc	/^void RawGraph::pack_memory() {$/;"	f	class:rstd::RawGraph
+parents_h	TG.cc	/^int TG::parents_h(long n) {$/;"	f	class:TG
+parse	ArgPack.cc	/^ArgPack::parse() {$/;"	f	class:ArgPack
+parse_error	ArgPack.cc	/^void ArgPack::parse_error(int line) {$/;"	f	class:ArgPack
+pdf_triangle	RMath.cc	/^double pdf_triangle(double urv01_a, double urv01_b, double slope) {$/;"	f	namespace:rstd
+pe_	PGraph.h	/^	rstd::RVector<Resource>			pe_;$/;"	m	class:PGraph
+pe_soln_	PGraph.h	/^	rstd::RVector<ResourceInstance>	pe_soln_;$/;"	m	class:PGraph
+period	TG.h	/^	double period() const {return period_;}$/;"	f	class:TG
+period_	TG.h	/^		double period_;$/;"	m	class:TG
+period_mul	ArgPack.h	/^		rstd::RVector<double> period_mul;$/;"	m	class:ArgPack
+pointer	FVector.h	/^	typedef T * pointer;$/;"	t	class:rstd::FVector
+pointer	RVector.h	/^	typedef typename impl::pointer pointer;$/;"	t	class:rstd::RVector
+pointer	RecVector.h	/^	typedef typename impl::pointer pointer;$/;"	t	class:rstd::RecVector2
+pointer	RecVector.h	/^	typedef typename impl::pointer pointer;$/;"	t	class:rstd::RecVector3
+pointer	RecVector.h	/^	typedef typename impl::pointer pointer;$/;"	t	class:rstd::RecVector4
+pop_back	RVector.h	/^	void pop_back() { impl_.pop_back(); }$/;"	f	class:rstd::RVector
+pop_token	RString.cc	/^void pop_token(string & s, const char * delim) {$/;"	f	namespace:rstd
+print	Interface.h	/^	static void print(std::ostream & os, const T & t, const U &)$/;"	f	struct:rstd::print_if_possible_internal
+print	Interface.h	/^	static void print(std::ostream & os, const T &, const U & deflt)$/;"	f	struct:rstd::print_if_possible_internal
+print_if_possible	Interface.h	/^	void print_if_possible(std::ostream & os, const T & t, const U & deflt)$/;"	f	namespace:rstd
+print_if_possible_internal	Interface.h	/^class print_if_possible_internal {};$/;"	c	namespace:rstd
+print_if_possible_internal	Interface.h	/^struct print_if_possible_internal<T, U, false> {$/;"	s	namespace:rstd
+print_if_possible_internal	Interface.h	/^struct print_if_possible_internal<T, U, true> {$/;"	s	namespace:rstd
+print_to	DBase.cc	/^void DBase::print_to(ostream & os, const string & table_label) const {$/;"	f	class:DBase
+print_to	Graph.cc	/^void RawGraph::edge_type::print_to(ostream & os) const {$/;"	f	class:rstd::RawGraph::edge_type
+print_to	Graph.cc	/^void RawGraph::print_to(ostream & os) const {$/;"	f	class:rstd::RawGraph
+print_to	Graph.cc	/^void RawGraph::vertex_type::print_to(ostream & os) const {$/;"	f	class:rstd::RawGraph::vertex_type
+print_to	Graph.h	/^		void print_to(std::ostream & os) const { os << index_; }$/;"	f	class:rstd::RawGraph::edge_index
+print_to	Graph.h	/^		void print_to(std::ostream & os) const { os << index_; }$/;"	f	class:rstd::RawGraph::vertex_index
+print_to	PGraph.cc	/^void PGraph::print_to(ostream &os) const {$/;"	f	class:PGraph
+print_to	PGraph.cc	/^void Resource::print_to(ostream &os) const$/;"	f	class:Resource
+print_to	PGraph.cc	/^void ResourceInstance::print_to(ostream &os) const$/;"	f	class:ResourceInstance
+print_to	PGraph.cc	/^void ResourceUse::print_to(ostream &os) const$/;"	f	class:ResourceUse
+print_to	TG.cc	/^void TG::print_to(ostream & os) const {$/;"	f	class:TG
+print_to	TGraph.cc	/^void TGraph::print_to(ostream & os) const {$/;"	f	class:TGraph
+print_to_default	RVector.h	/^	void print_to_default(std::ostream & os) const { print_cont(*this, os, " "); }$/;"	f	class:rstd::RVector
+print_to_ps	psprint.cc	/^void PGraph::print_to_ps(ostream & os, const string & filename) const {$/;"	f	class:PGraph
+print_to_ps	psprint.cc	/^void TGraph::print_to_ps(ostream & os, const string & filename) const {$/;"	f	class:TGraph
+print_to_vcg	TG.cc	/^void TG::print_to_vcg(ostream & os) const {$/;"	f	class:TG
+print_to_vcg	TGraph.cc	/^void TGraph::print_to_vcg(ostream & os) const {$/;"	f	class:TGraph
+printable	Interface.h	/^	struct printable {$/;"	s	namespace:rstd::PRINTABLE_NS_
+prob_hard_deadline	ArgPack.h	/^		double prob_hard_deadline;$/;"	m	class:ArgPack
+prob_multi_start_nodes	ArgPack.h	/^		double prob_multi_start_nodes;$/;"	m	class:ArgPack
+prob_periodic	ArgPack.h	/^		double prob_periodic;$/;"	m	class:ArgPack
+ptoconst	RStd.h	/^	const T * ptoconst(T * x) { return x; }$/;"	f	namespace:rstd
+ptr_dereference	RFunctional.h	/^	struct ptr_dereference : public runary_function<T *, T &>$/;"	s	namespace:rstd
+ptr_reference	RFunctional.h	/^	struct ptr_reference : public runary_function<T &, T *>$/;"	s	namespace:rstd
+punconst	RStd.h	/^	T * punconst(const T * x) { return const_cast<T *>(x); }$/;"	f	namespace:rstd
+push_back	RVector.h	/^	void push_back(const_reference x) { impl_.push_back(x); }$/;"	f	class:rstd::RVector
+push_period	TG.cc	/^void TG::push_period() {$/;"	f	class:TG
+rabort	RStd.cc	/^void rabort(const char * file, int line, const char *message) {$/;"	f	namespace:rstd
+random_dir	RMath.cc	/^MathVec::random_dir(value_type magnitude) {$/;"	f	class:rstd::MathVec
+random_dir	RMath.cc	/^MathVec::random_dir(value_type magnitude, RGen & rg) {$/;"	f	class:rstd::MathVec
+random_pos	RMath.cc	/^MathVec::random_pos(value_type radius) {$/;"	f	class:rstd::MathVec
+random_pos	RMath.cc	/^MathVec::random_pos(value_type radius, RGen & rg) {$/;"	f	class:rstd::MathVec
+rbegin	FVector.h	/^	iterator rbegin() { return reverse_iterator(data_ + N); }$/;"	f	class:rstd::FVector
+rbegin	RVector.h	/^	const_reverse_iterator rbegin() const { return impl_.rbegin(); }$/;"	f	class:rstd::RVector
+rbegin	RVector.h	/^	reverse_iterator rbegin() { return impl_.rbegin(); }$/;"	f	class:rstd::RVector
+rbegin	RecVector.h	/^	const_iterator rbegin() const { return impl_.rbegin(); }$/;"	f	class:rstd::RecVector2
+rbegin	RecVector.h	/^	const_iterator rbegin() const { return impl_.rbegin(); }$/;"	f	class:rstd::RecVector3
+rbegin	RecVector.h	/^	const_iterator rbegin() const { return impl_.rbegin(); }$/;"	f	class:rstd::RecVector4
+rbegin	RecVector.h	/^	iterator rbegin() { return impl_.rbegin(); }$/;"	f	class:rstd::RecVector2
+rbegin	RecVector.h	/^	iterator rbegin() { return impl_.rbegin(); }$/;"	f	class:rstd::RecVector3
+rbegin	RecVector.h	/^	iterator rbegin() { return impl_.rbegin(); }$/;"	f	class:rstd::RecVector4
+rbinary_function	RFunctional.h	/^struct rbinary_function {$/;"	s	namespace:rstd
+rconfirm	RStd.h	/^inline void rconfirm(bool x, const char * message) { if (! x) rexit(message); }$/;"	f	namespace:rstd
+ref_	Epsilon.h	/^		T ref_;$/;"	m	struct:rstd::eps_equal_to
+ref_	Epsilon.h	/^		T ref_;$/;"	m	struct:rstd::eps_greater
+ref_	Epsilon.h	/^		T ref_;$/;"	m	struct:rstd::eps_greater_equal
+ref_	Epsilon.h	/^		T ref_;$/;"	m	struct:rstd::eps_less
+ref_	Epsilon.h	/^		T ref_;$/;"	m	struct:rstd::eps_less_equal
+ref_	Epsilon.h	/^		T ref_;$/;"	m	struct:rstd::eps_not_equal_to
+reference	FVector.h	/^	typedef T & reference;$/;"	t	class:rstd::FVector
+reference	RVector.h	/^	typedef typename impl::reference reference;$/;"	t	class:rstd::RVector
+reference	RVector.h	/^	typedef typename super::reference reference;$/;"	t	class:rstd::MVector
+reference	RecVector.h	/^	typedef typename impl::reference reference;$/;"	t	class:rstd::RecVector2
+reference	RecVector.h	/^	typedef typename impl::reference reference;$/;"	t	class:rstd::RecVector3
+reference	RecVector.h	/^	typedef typename impl::reference reference;$/;"	t	class:rstd::RecVector4
+rend	FVector.h	/^	iterator rend() { return reverse_iterator(data_); }$/;"	f	class:rstd::FVector
+rend	RVector.h	/^	const_reverse_iterator rend() const { return impl_.rend(); }$/;"	f	class:rstd::RVector
+rend	RVector.h	/^	reverse_iterator rend() { return impl_.rend(); }$/;"	f	class:rstd::RVector
+rend	RecVector.h	/^	const_iterator rend() const { return impl_.rend(); }$/;"	f	class:rstd::RecVector2
+rend	RecVector.h	/^	const_iterator rend() const { return impl_.rend(); }$/;"	f	class:rstd::RecVector3
+rend	RecVector.h	/^	const_iterator rend() const { return impl_.rend(); }$/;"	f	class:rstd::RecVector4
+rend	RecVector.h	/^	iterator rend() { return impl_.rend(); }$/;"	f	class:rstd::RecVector2
+rend	RecVector.h	/^	iterator rend() { return impl_.rend(); }$/;"	f	class:rstd::RecVector3
+rend	RecVector.h	/^	iterator rend() { return impl_.rend(); }$/;"	f	class:rstd::RecVector4
+reserve	RVector.h	/^	void reserve(size_type n) { impl_.reserve(n); }$/;"	f	class:rstd::RVector
+resize	RVector.h	/^	void resize(size_type new_size) { impl_.resize(new_size); }$/;"	f	class:rstd::RVector
+resize	RVector.h	/^	void resize(size_type sz, const T & x) { impl_.resize(sz, x); }$/;"	f	class:rstd::RVector
+resource_indx_	PGraph.h	/^	unsigned				resource_indx_;$/;"	m	class:ResourceInstance
+result	Interface.h	/^		enum { result = (same_or_derived<T, CompsRoot>::result ||$/;"	e	enum:rstd::COMPARABLE_NS_::comparable::__anon2
+result	Interface.h	/^		enum { result = (same_or_derived<T, PrintsRoot>::result ||$/;"	e	enum:rstd::PRINTABLE_NS_::printable::__anon1
+result	RStd.h	/^	enum { result = 0 };$/;"	e	enum:rstd::same_type::__anon9
+result	RStd.h	/^	enum { result = 1 };$/;"	e	enum:rstd::same_type::__anon10
+result	RStd.h	/^	enum { result = conversion_exists<const D *, const B *>::result &&$/;"	e	enum:rstd::same_or_derived::__anon11
+result	RStd.h	/^	enum { result =$/;"	e	enum:rstd::conversion_exists::__anon8
+result_type	RFunctional.h	/^	typedef Result result_type;$/;"	t	struct:rstd::rbinary_function
+result_type	RFunctional.h	/^	typedef Result result_type;$/;"	t	struct:rstd::runary_function
+reverse_edge_iterator	Graph.h	/^	typedef e_impl::reverse_iterator reverse_edge_iterator;$/;"	t	class:rstd::RawGraph
+reverse_iterator	FVector.h	/^	typedef std::reverse_iterator<iterator> reverse_iterator;	$/;"	t	class:rstd::FVector
+reverse_iterator	RVector.h	/^	typedef typename impl::reverse_iterator reverse_iterator;	$/;"	t	class:rstd::RVector
+reverse_iterator	RecVector.h	/^	typedef typename impl::reverse_iterator reverse_iterator;$/;"	t	class:rstd::RecVector2
+reverse_iterator	RecVector.h	/^	typedef typename impl::reverse_iterator reverse_iterator;$/;"	t	class:rstd::RecVector3
+reverse_iterator	RecVector.h	/^	typedef typename impl::reverse_iterator reverse_iterator;$/;"	t	class:rstd::RecVector4
+reverse_vertex_iterator	Graph.h	/^	typedef v_impl::reverse_iterator reverse_vertex_iterator;$/;"	t	class:rstd::RawGraph
+rexit	RStd.cc	/^void rexit(const char * message) {$/;"	f	namespace:rstd
+ri_	TG.h	/^	unsigned	ri_;		\/\/ indx of resource it runs in (for pack_sched)$/;"	m	class:TGnode
+rnlimits	RMath.h	/^struct rnlimits : public std::numeric_limits<T> {$/;"	s	namespace:rstd
+rpos	RStd.cc	/^void rpos(const char * file, int line) {$/;"	f	namespace:rstd
+rstd	Epsilon.cc	/^namespace rstd {$/;"	n	file:
+rstd	Epsilon.h	/^namespace rstd {$/;"	n
+rstd	FVector.h	/^namespace rstd {$/;"	n
+rstd	Graph.cc	/^namespace rstd {$/;"	n	file:
+rstd	Graph.h	/^namespace rstd {$/;"	n
+rstd	HolderPtr.h	/^namespace rstd {$/;"	n
+rstd	Interface.cc	/^namespace rstd {$/;"	n	file:
+rstd	Interface.h	/^namespace rstd {$/;"	n
+rstd	RAlgo.h	/^namespace rstd {$/;"	n
+rstd	RFunctional.h	/^namespace rstd {$/;"	n
+rstd	RGen.cc	/^namespace rstd {$/;"	n	file:
+rstd	RGen.h	/^namespace rstd {$/;"	n
+rstd	RMath.cc	/^namespace rstd {$/;"	n	file:
+rstd	RMath.h	/^namespace rstd {$/;"	n
+rstd	RPair.h	/^namespace rstd {$/;"	n
+rstd	RStd.cc	/^namespace rstd {$/;"	n	file:
+rstd	RStd.h	/^namespace rstd {$/;"	n
+rstd	RString.cc	/^namespace rstd {$/;"	n	file:
+rstd	RString.h	/^namespace rstd {$/;"	n
+rstd	RVector.h	/^namespace rstd {$/;"	n
+rstd	RecVector.h	/^namespace rstd {$/;"	n
+rswap	Graph.cc	/^void RawGraph::rswap(RawGraph & rg) {$/;"	f	class:rstd::RawGraph
+rswap	HolderPtr.h	/^	void rswap(self & hp) throw () { rstd::rswap(data_, hp.data_); }$/;"	f	class:rstd::HolderPtr
+rswap	RGen.cc	/^void RGen::rswap(self & a) {$/;"	f	class:rstd::RGen
+rswap	RVector.h	/^	virtual void rswap(self & a) { impl_.swap(a.impl_); }$/;"	f	class:rstd::RVector
+rtoconst	RStd.h	/^	const T & rtoconst(T & x) { return x; }$/;"	f	namespace:rstd
+ru_	PGraph.h	/^	rstd::RVector<ResourceUse>	ru_;$/;"	m	class:ResourceInstance
+ru_	TG.h	/^	unsigned	ru_;		\/\/ indx of resourceuse rep by it (for pack_sched)$/;"	m	class:TGnode
+runary_function	RFunctional.h	/^struct runary_function {$/;"	s	namespace:rstd
+runconst	RStd.h	/^	T & runconst(const T & x) { return const_cast<T & >(x); }$/;"	f	namespace:rstd
+same_or_derived	RStd.h	/^struct same_or_derived {$/;"	s	namespace:rstd
+same_type	RStd.h	/^struct same_type {$/;"	s	namespace:rstd
+same_type	RStd.h	/^struct same_type<A, A> {$/;"	s	namespace:rstd
+second	RPair.h	/^		T2 second;$/;"	m	struct:rstd::Quad
+second	RPair.h	/^		T2 second;$/;"	m	struct:rstd::Triple
+second_argument_type	RFunctional.h	/^	typedef Arg2 second_argument_type;$/;"	t	struct:rstd::rbinary_function
+second_type	RPair.h	/^	typedef T2 second_type;$/;"	t	struct:rstd::Quad
+second_type	RPair.h	/^	typedef T2 second_type;$/;"	t	struct:rstd::Triple
+seed	ArgPack.h	/^		int seed;$/;"	m	class:ArgPack
+select1st	RPair.h	/^	struct select1st :$/;"	s	namespace:rstd
+select2nd	RPair.h	/^	struct select2nd :$/;"	s	namespace:rstd
+select3rd	RPair.h	/^	struct select3rd :$/;"	s	namespace:rstd
+select4th	RPair.h	/^	struct select4th : public runary_function<Quad, typename Quad::fourth_type>$/;"	s	namespace:rstd
+self	FVector.h	/^	typedef FVector<N, T> self;$/;"	t	class:rstd::FVector
+self	Graph.h	/^		typedef RawGraph::edge_type self;$/;"	t	class:rstd::RawGraph::edge_type
+self	Graph.h	/^		typedef RawGraph::vertex_type self;$/;"	t	class:rstd::RawGraph::vertex_type
+self	Graph.h	/^	typedef Graph self;$/;"	t	class:rstd::Graph
+self	Graph.h	/^	typedef RawGraph self;$/;"	t	class:rstd::RawGraph
+self	HolderPtr.h	/^	typedef HolderPtr self;$/;"	t	class:rstd::HolderPtr
+self	RGen.h	/^	typedef RGen self;$/;"	t	class:rstd::RGen
+self	RMath.h	/^	typedef MathVec self;$/;"	t	class:rstd::MathVec
+self	RVector.h	/^	typedef MVector self;$/;"	t	class:rstd::MVector
+self	RVector.h	/^	typedef MVector<1, T, INDEX> self;$/;"	t	class:rstd::MVector
+self	RVector.h	/^	typedef RVector<T> self;$/;"	t	class:rstd::RVector
+self	RecVector.h	/^	typedef RecVector2 self;$/;"	t	class:rstd::RecVector2
+self	RecVector.h	/^	typedef RecVector3 self;$/;"	t	class:rstd::RecVector3
+self	RecVector.h	/^	typedef RecVector4 self;$/;"	t	class:rstd::RecVector4
+self_check	FVector.h	/^	virtual void self_check() const {}$/;"	f	class:rstd::FVector
+self_check	Graph.cc	/^void RawGraph::self_check() const {$/;"	f	class:rstd::RawGraph
+self_check	RVector.h	/^	virtual void self_check() const {}$/;"	f	class:rstd::RVector
+self_check	RecVector.h	/^	virtual void self_check() const {}$/;"	f	class:rstd::RecVector2
+self_check	RecVector.h	/^	virtual void self_check() const {}$/;"	f	class:rstd::RecVector3
+self_check	RecVector.h	/^	virtual void self_check() const {}$/;"	f	class:rstd::RecVector4
+self_check_deep	Graph.h	/^	virtual void self_check_deep() const { self_check(); }$/;"	f	class:rstd::RawGraph
+self_check_deep	RecVector.h	/^	virtual void self_check_deep() const { impl_.self_check_deep(); }$/;"	f	class:rstd::RecVector2
+self_check_deep	RecVector.h	/^	virtual void self_check_deep() const { impl_.self_check_deep(); }$/;"	f	class:rstd::RecVector3
+self_check_deep	RecVector.h	/^	virtual void self_check_deep() const { impl_.self_check_deep(); }$/;"	f	class:rstd::RecVector4
+series_arclist_	TG.h	/^		rstd::RVector<std::pair<long,long> > series_arclist_;$/;"	m	class:TG
+series_children_	TG.h	/^	rstd::RVector<long> series_children_;$/;"	m	class:TGnode
+series_global_xover	ArgPack.h	/^		int series_global_xover;$/;"	m	class:ArgPack
+series_len_av	ArgPack.h	/^		int series_len_av;$/;"	m	class:ArgPack
+series_len_mul	ArgPack.h	/^		int series_len_mul;$/;"	m	class:ArgPack
+series_local_xover	ArgPack.h	/^		int series_local_xover;$/;"	m	class:ArgPack
+series_must_rejoin	ArgPack.h	/^		bool series_must_rejoin;$/;"	m	class:ArgPack
+series_parallel_generate_xover	TG.cc	/^void TG::series_parallel_generate_xover(int local_xover, int global_xover)$/;"	f	class:TG
+series_parallel_get_all_parents	TG.cc	/^RVector<long> TG::series_parallel_get_all_parents ()$/;"	f	class:TG
+series_parallel_xarc_added	TG.cc	/^bool TG::series_parallel_xarc_added (long a, long b)$/;"	f	class:TG
+series_parent_	TG.h	/^	long series_parent_;$/;"	m	class:TGnode
+series_subgraph_fork_out	ArgPack.h	/^		double series_subgraph_fork_out;$/;"	m	class:ArgPack
+series_wid_av	ArgPack.h	/^		int series_wid_av;$/;"	m	class:ArgPack
+series_wid_mul	ArgPack.h	/^		int series_wid_mul;$/;"	m	class:ArgPack
+set_aperiod	TG.h	/^	void set_aperiod(long ap) {aperiod_ = ap;}$/;"	f	class:TG
+set_period	TG.h	/^	void set_period(double p) {period_ = p;}$/;"	f	class:TG
+set_seed	RGen.cc	/^void RGen::set_seed(int i, int j, int k, int l) {$/;"	f	class:rstd::RGen
+set_seed	RGen.cc	/^void RGen::set_seed(int seed) {$/;"	f	class:rstd::RGen
+shortest_path	Graph.cc	/^RawGraph::shortest_path(vertex_index start) const {$/;"	f	class:rstd::RawGraph
+size	FVector.h	/^	size_type size() const { return N; }$/;"	f	class:rstd::FVector
+size	RVector.h	/^	size_type size() const { return static_cast<size_type>(impl_.size()); }$/;"	f	class:rstd::RVector
+size	RecVector.h	/^	const FVector<2, size_type> & size() const { return size_; }$/;"	f	class:rstd::RecVector2
+size	RecVector.h	/^	const FVector<3, size_type> & size() const { return size_; }$/;"	f	class:rstd::RecVector3
+size	RecVector.h	/^	const FVector<4, size_type> & size() const { return size_; }$/;"	f	class:rstd::RecVector4
+size_	RecVector.h	/^		FVector<2, size_type> size_;$/;"	m	class:rstd::RecVector2
+size_	RecVector.h	/^		FVector<3, size_type> size_;$/;"	m	class:rstd::RecVector3
+size_	RecVector.h	/^		FVector<4, size_type> size_;$/;"	m	class:rstd::RecVector4
+size_in	Graph.h	/^		edge_index size_in() const { return in_.size(); }$/;"	f	class:rstd::RawGraph::vertex_type
+size_out	Graph.h	/^		edge_index size_out() const { return out_.size(); }$/;"	f	class:rstd::RawGraph::vertex_type
+size_type	FVector.h	/^	typedef int size_type;$/;"	t	class:rstd::FVector
+size_type	RVector.h	/^	typedef long size_type;$/;"	t	class:rstd::RVector
+size_type	RVector.h	/^	typedef typename super::size_type size_type;$/;"	t	class:rstd::MVector
+size_type	RecVector.h	/^	typedef long size_type;$/;"	t	class:rstd::RecVector2
+size_type	RecVector.h	/^	typedef long size_type;$/;"	t	class:rstd::RecVector3
+size_type	RecVector.h	/^	typedef long size_type;$/;"	t	class:rstd::RecVector4
+soft_deadline_mul	ArgPack.h	/^		double soft_deadline_mul;$/;"	m	class:ArgPack
+space	PGraph.cc	/^	double start_at, space;$/;"	m	class:Dpair	file:
+start_at	PGraph.cc	/^	double start_at, space;$/;"	m	class:Dpair	file:
+start_node_av	ArgPack.h	/^		int start_node_av;$/;"	m	class:ArgPack
+start_node_mul	ArgPack.h	/^		int start_node_mul;$/;"	m	class:ArgPack
+static_assert	RStd.h	/^template<> struct static_assert<true> { static_assert() {} };$/;"	f	struct:rstd::static_assert
+static_assert	RStd.h	/^template<> struct static_assert<true> { static_assert() {} };$/;"	s	namespace:rstd
+step_	Epsilon.h	/^	T step_;$/;"	m	struct:rstd::eps_dec
+step_	Epsilon.h	/^	T step_;$/;"	m	struct:rstd::eps_inc
+str_	RString.h	/^		std::string str_;$/;"	m	class:rstd::Conv
+super	Graph.h	/^	typedef RawGraph super;$/;"	t	class:rstd::Graph
+super	RMath.h	/^	typedef RVector<double> super;$/;"	t	class:rstd::MathVec
+super	RMath.h	/^	typedef std::numeric_limits<T> super;$/;"	t	struct:rstd::rnlimits
+super	RVector.h	/^	typedef RVector<MVector<DIM - 1, T, INDEX> > super;$/;"	t	class:rstd::MVector
+super	RVector.h	/^	typedef RVector<T> super;$/;"	t	class:rstd::MVector
+table_	DBase.h	/^		rstd::RecVector2<double> table_;$/;"	m	class:DBase
+table_av	ArgPack.h	/^		rstd::RVector<double> table_av;$/;"	m	class:ArgPack
+table_cnt	ArgPack.h	/^		int table_cnt;$/;"	m	class:ArgPack
+table_jitter	ArgPack.h	/^		rstd::RVector<double> table_jitter;$/;"	m	class:ArgPack
+table_label	ArgPack.h	/^		std::string table_label;$/;"	m	class:ArgPack
+table_mul	ArgPack.h	/^		rstd::RVector<double> table_mul;$/;"	m	class:ArgPack
+table_name	ArgPack.h	/^		rstd::RVector<std::string> table_name;$/;"	m	class:ArgPack
+table_name_	DBase.h	/^		const rstd::RVector<std::string> & table_name_;$/;"	m	class:DBase
+table_offset_	DBase.h	/^		int table_offset_;$/;"	m	class:DBase
+table_round	ArgPack.h	/^		rstd::RVector<double> table_round;$/;"	m	class:ArgPack
+table_type_	DBase.h	/^		rstd::RecVector3<rstd::RVector<double> > table_type_;$/;"	m	class:DBase
+task_attrib_av	ArgPack.h	/^		rstd::RVector<double> task_attrib_av;$/;"	m	class:ArgPack
+task_attrib_mul	ArgPack.h	/^		rstd::RVector<double> task_attrib_mul;$/;"	m	class:ArgPack
+task_attrib_name	ArgPack.h	/^		rstd::RVector<std::string> task_attrib_name;$/;"	m	class:ArgPack
+task_attrib_round	ArgPack.h	/^		rstd::RVector<double> task_attrib_round;$/;"	m	class:ArgPack
+task_type_cnt	ArgPack.h	/^		int task_type_cnt;$/;"	m	class:ArgPack
+task_unique	ArgPack.h	/^		bool task_unique;$/;"	m	class:ArgPack
+te_	PGraph.h	/^	double	ts_, te_;$/;"	m	class:ResourceUse
+tg_cnt	ArgPack.h	/^		int tg_cnt;$/;"	m	class:ArgPack
+tg_label	ArgPack.h	/^		std::string tg_label;$/;"	m	class:ArgPack
+tg_offset_	TGraph.h	/^		int tg_offset_;$/;"	m	class:TGraph
+third	RPair.h	/^		T3 third;$/;"	m	struct:rstd::Quad
+third	RPair.h	/^		T3 third;$/;"	m	struct:rstd::Triple
+third_type	RPair.h	/^	typedef T3 third_type;$/;"	t	struct:rstd::Quad
+third_type	RPair.h	/^	typedef T3 third_type;$/;"	t	struct:rstd::Triple
+time_frame_	PGraph.h	/^	double					time_frame_;$/;"	m	class:ResourceInstance
+to	Graph.h	/^		vertex_index to() const { return to_; }$/;"	f	class:rstd::RawGraph::edge_type
+to_	Graph.h	/^			vertex_index to_;$/;"	m	class:rstd::RawGraph::edge_type
+tokenize	RString.cc	/^tokenize(const string & s, const char * delim) {$/;"	f	namespace:rstd
+top_sort	Graph.cc	/^top_sort(const RVector<vertex_index> & start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+top_sort	Graph.cc	/^top_sort(const vertex_index start, bool reverse_i) const {$/;"	f	class:rstd::RawGraph
+top_sort_recurse	Graph.cc	/^void RawGraph::top_sort_recurse(RVector<vertex_index> & vec,$/;"	f	class:rstd::RawGraph
+trans_print_to	DBase.cc	/^void DBase::trans_print_to(ostream & os, const string & table_label) const {$/;"	f	class:DBase
+trans_type_cnt	ArgPack.h	/^		int trans_type_cnt;$/;"	m	class:ArgPack
+trans_unique	ArgPack.h	/^		bool trans_unique;$/;"	m	class:ArgPack
+ts_	PGraph.h	/^	double	ts_, te_;$/;"	m	class:ResourceUse
+type	TG.h	/^	int			type;		\/\/ if == -1, then << generates$/;"	m	class:TGnode
+type	TG.h	/^	int	type;		\/\/ if == -1, then << generates$/;"	m	class:TGarc
+type_av	ArgPack.h	/^		rstd::RVector<double> type_av;$/;"	m	class:ArgPack
+type_cnt_	DBase.h	/^		int type_cnt_;$/;"	m	class:DBase
+type_jitter	ArgPack.h	/^		rstd::RVector<double> type_jitter;$/;"	m	class:ArgPack
+type_mul	ArgPack.h	/^		rstd::RVector<double> type_mul;$/;"	m	class:ArgPack
+type_name	ArgPack.h	/^		rstd::RVector<std::string> type_name;$/;"	m	class:ArgPack
+type_name_	DBase.h	/^		const rstd::RVector<std::string> & type_name_;$/;"	m	class:DBase
+type_round	ArgPack.h	/^		rstd::RVector<double> type_round;$/;"	m	class:ArgPack
+type_table_ratio	ArgPack.h	/^		double type_table_ratio;$/;"	m	class:ArgPack
+type_to_type	RStd.h	/^struct type_to_type {$/;"	s	namespace:rstd
+u_	RGen.h	/^		HolderPtr<RVector<float> > u_;$/;"	m	class:rstd::RGen
+v_data_	Graph.h	/^		RVector<V> v_data_;$/;"	m	class:rstd::Graph
+v_impl	Graph.h	/^	typedef RVector<vertex_type> v_impl;$/;"	t	class:rstd::RawGraph
+val_	RAlgo.h	/^		long val_;$/;"	m	class:rstd::SearchHalt
+value	RStd.h	/^	enum { value = I };$/;"	e	enum:rstd::int_to_type::__anon7
+value_	PGraph.h	/^	double value_;$/;"	m	class:ResourceAttrib
+value_type	FVector.h	/^	typedef T value_type;$/;"	t	class:rstd::FVector
+value_type	RVector.h	/^	typedef typename impl::value_type value_type;$/;"	t	class:rstd::RVector
+value_type	RecVector.h	/^	typedef typename impl::value_type value_type;$/;"	t	class:rstd::RecVector2
+value_type	RecVector.h	/^	typedef typename impl::value_type value_type;$/;"	t	class:rstd::RecVector3
+value_type	RecVector.h	/^	typedef typename impl::value_type value_type;$/;"	t	class:rstd::RecVector4
+vcg_file_name	ArgPack.h	/^		std::string vcg_file_name;$/;"	m	class:ArgPack
+vcg_out_	ArgPack.h	/^		std::ofstream vcg_out_;$/;"	m	class:ArgPack
+vertex_	Graph.h	/^		v_impl vertex_;$/;"	m	class:rstd::RawGraph
+vertex_begin	Graph.h	/^	const_vertex_iterator vertex_begin() const { return vertex_.begin(); }$/;"	f	class:rstd::RawGraph
+vertex_begin	Graph.h	/^	vertex_iterator vertex_begin() { return vertex_.begin(); }$/;"	f	class:rstd::RawGraph
+vertex_cnt_av	ArgPack.h	/^		double vertex_cnt_av;$/;"	m	class:ArgPack
+vertex_cnt_mul	ArgPack.h	/^		double vertex_cnt_mul;$/;"	m	class:ArgPack
+vertex_end	Graph.h	/^	const_vertex_iterator vertex_end() const { return vertex_.end(); }$/;"	f	class:rstd::RawGraph
+vertex_end	Graph.h	/^	vertex_iterator vertex_end() { return vertex_.end(); }$/;"	f	class:rstd::RawGraph
+vertex_in_deg	ArgPack.h	/^		int vertex_in_deg;$/;"	m	class:ArgPack
+vertex_index	Graph.h	/^		vertex_index(long indx) : index_(indx) {}$/;"	f	class:rstd::RawGraph::vertex_index
+vertex_index	Graph.h	/^	class vertex_index :$/;"	c	class:rstd::RawGraph
+vertex_iterator	Graph.h	/^	typedef v_impl::iterator vertex_iterator;$/;"	t	class:rstd::RawGraph
+vertex_out_deg	ArgPack.h	/^		int vertex_out_deg;$/;"	m	class:ArgPack
+vertex_rbegin	Graph.h	/^	reverse_vertex_iterator vertex_rbegin() { return vertex_.rbegin(); }$/;"	f	class:rstd::RawGraph
+vertex_reference	Graph.h	/^	typedef v_impl::reference vertex_reference;$/;"	t	class:rstd::RawGraph
+vertex_rend	Graph.h	/^	const_reverse_vertex_iterator vertex_rend() const { return vertex_.rend(); }$/;"	f	class:rstd::RawGraph
+vertex_rend	Graph.h	/^	reverse_vertex_iterator vertex_rend() { return vertex_.rend(); }$/;"	f	class:rstd::RawGraph
+vertex_time	ArgPack.h	/^		double vertex_time;$/;"	m	class:ArgPack
+vertex_type	Graph.h	/^		vertex_type() : out_(), in_() {}$/;"	f	class:rstd::RawGraph::vertex_type
+vertex_type	Graph.h	/^	class vertex_type :$/;"	c	class:rstd::RawGraph
+vertex_weight	Graph.cc	/^RawGraph::vertex_weight(vertex_index \/* v *\/) const {$/;"	f	class:rstd::RawGraph
+vertex_weight	Graph.cc	/^WGraph::vertex_weight(vertex_index v) const {$/;"	f	class:rstd::WGraph
+w	TG.h	/^	int			h, w;$/;"	m	class:TGnode
+write_ap	ArgPack.h	/^	static ArgPack & write_ap() { RASSERT(def_ap_); return *def_ap_; }$/;"	f	class:ArgPack
+~ArgPack	ArgPack.cc	/^ArgPack::~ArgPack() {$/;"	f	class:ArgPack
+~Clones	Interface.h	/^	protected: ~Clones() {}$/;"	f	class:rstd::Clones
+~ClonesBase	Interface.h	/^class ClonesBase { protected: ~ClonesBase() {} };$/;"	f	class:rstd::ClonesBase
+~Comps	Interface.h	/^	protected: ~Comps() {}$/;"	f	class:rstd::Comps
+~CompsBase	Interface.h	/^	protected: ~CompsBase() {}$/;"	f	class:rstd::CompsBase
+~CompsRoot	Interface.h	/^class CompsRoot { protected: ~CompsRoot() {} };$/;"	f	class:rstd::CompsRoot
+~MVector	RVector.h	/^	virtual ~MVector() {}$/;"	f	class:rstd::MVector
+~Prints	Interface.h	/^	protected: ~Prints() {}$/;"	f	class:rstd::Prints
+~PrintsBase	Interface.h	/^	protected: ~PrintsBase() {}$/;"	f	class:rstd::PrintsBase
+~PrintsRoot	Interface.h	/^class PrintsRoot { protected: ~PrintsRoot() {} };$/;"	f	class:rstd::PrintsRoot
+~Quad	RPair.h	/^	~Quad() {}$/;"	f	struct:rstd::Quad
+~RGen	RGen.cc	/^RGen::~RGen() {}$/;"	f	class:rstd::RGen
+~RVector	RVector.h	/^	virtual ~RVector() {}$/;"	f	class:rstd::RVector
+~RawGraph	Graph.h	/^	virtual ~RawGraph() {}$/;"	f	class:rstd::RawGraph
+~RecVector3	RecVector.h	/^	virtual ~RecVector3() {}$/;"	f	class:rstd::RecVector3
+~RecVector4	RecVector.h	/^	virtual ~RecVector4() {}$/;"	f	class:rstd::RecVector4
+~SChecksBase	Interface.h	/^class SChecksBase { protected: ~SChecksBase() {} };$/;"	f	class:rstd::SChecksBase
+~Swaps	Interface.h	/^	protected: ~Swaps() {}$/;"	f	class:rstd::Swaps
+~SwapsBase	Interface.h	/^class SwapsBase { protected: ~SwapsBase() {} };$/;"	f	class:rstd::SwapsBase
+~Triple	RPair.h	/^	~Triple() {}$/;"	f	struct:rstd::Triple
+~rbinary_function	RFunctional.h	/^	~rbinary_function() {}$/;"	f	struct:rstd::rbinary_function
+~runary_function	RFunctional.h	/^	~runary_function() {}$/;"	f	struct:rstd::runary_function
