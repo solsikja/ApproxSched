@@ -1,8 +1,7 @@
 import os
 import os.path
-from algo import nameGen
 
-__infity = 1000000
+__infity = 1000
 
 
 def generate(path, tgff):
@@ -15,69 +14,65 @@ def generate(path, tgff):
             os.remove(fn)
 
         file = open(fn, "w")
-        gen_graph(file, graph, tgff.tables[0])
+        gen_graph(file, graph)
         file.close()
 
     print("OK!")
     return
 
 
-def gen_graph(file, graph, table):
+def gen_graph(file, graph):
     """ Generate a Graph """
-
-    proc_num = len(table.columns)-2
 
     file.write("\\* This is an example. *\\ \n")
 
-    #file.write("\\* minimize( \sum_{t_i \in L} (s_{t_i} + \sum_{p \in P} (wect_{p_m, t_i} \cdot d_{p_m, t_i}))) *\\ \n")
-    file.write("\nMinimize\n")
+    file.write("\nMaximize\n")
     file.write("obj:\t")
-
-    for leaf in graph.leaves:
-        file.write(" + ")
-        file.write(nameGen.starttime(leaf))
-        for i in range(proc_num):
-            file.write(" - " + table.values[leaf.type][i+2] + " " + nameGen.assign(i, leaf))
-        file.write("\n")
+    for task in graph.tasks.values():
+        if not task.is_approx():
+            continue
+        for core_m in graph.cores:
+            for ver in range(task.get_approx_ver()):
+                file.write(" + ")
+                file.write(task.get_quality(ver) + " " + task.name_assign_approx(core_m, ver))
+            file.write("\n")
     file.write("\n")
 
     file.write("\nSubject To\n")
     file.write("\\* Each task can only run on one processor once *\\ \n")
-    for name, task in graph.tasks.items():
-        file.write("   etro_" + name + ":\t")
-        for m in range(proc_num):
-            file.write(" + ")
-            file.write(nameGen.assign(m, task))
+    for i, task in enumerate(graph.tasks.values()):
+        file.write("   etro_" + str(i) + ":\t")
+        file.write(task.cplex_d("+", "1", graph.cores))
         file.write(" = 1\n")
 
-    # file.write("\\* Must meet the deadlines *\\ \n")
-    # for leaf in graph.leaves:
-    #     file.write("   DL_" + leaf.name + ":\t")
-    #     file.write(nameGen.starttime(leaf))
-    #     for m in range(proc_num):
-    #         file.write(" - " + table.values[leaf.type][m + 2] + " " + nameGen.assign(m, leaf) + "\t")
-    #     file.write("<=\t" + str(graph.deadline[leaf.name]) + "\n")
+    file.write("\\* Must meet the deadlines *\\ \n")
+    for leaf in graph.leaves:
+        file.write("   DL_" + leaf.name + ": ")
+        file.write(" + " + leaf.name_start())
+        file.write(leaf.cplex_wcet("+", graph.cores))
+        file.write(" <= " + str(graph.deadline[leaf.name]) + "\n")
 
     file.write("\\* Must meet the data dependencies *\\ \n")
     count = 0
-    for name, task in graph.tasks.items():
-        if len(task.children) == 0:
+    for name, task_i in graph.tasks.items():
+        if len(task_i.children) == 0:
             continue
-        for child in task.children:
-            for m in range(proc_num):
-                for k in range(proc_num):
+        for task_j in task_i.children:
+            for core_m in graph.cores:
+                for core_k in graph.cores:
                     file.write("   dpd_sp_" + str(count) + ":\t")
-                    file.write(nameGen.starttime(task) +
-                               " - " + nameGen.starttime(child) +
-                               " + " + str(__infity) + " " + nameGen.assign(m, task) +
-                               " + " + str(__infity) + " " + nameGen.assign(k, leaf) +
-                               " <= " + str(2 * __infity - float(table.values[task.type][m + 2]))
-                               + "\n")
+                    file.write(" + " + task_i.name_start())
+                    file.write(" - " + task_j.name_start())
+                    file.write(task_i.cplex_wcet_with_coefficient("+", str(__infity), [core_m]))
+                    # file.write(task_i)
+                    # file.write(task_i.cplex_d(" + ", str(__infity), [core_m]))
+                    file.write(task_j.cplex_d("+", str(__infity), [core_k]))
+                    file.write(" <= " + str(2 * __infity) + "\n")
                     count += 1
 
     file.write("\\* Two unrelated tasks must not be executed on the same processor at the same time. *\\ \n")
     count = 0
-    for m in range(proc_num):
+    for core_m in graph.cores:
         for i, task_i in enumerate(graph.tasks.values()):
             for j, task_j in enumerate(graph.tasks.values()):
                 if j <= i:
@@ -86,40 +81,47 @@ def gen_graph(file, graph, table):
                     continue
 
                 file.write("   unr_" + str(count) + "_p:\t")
-                file.write(nameGen.starttime(task_i) +
-                           " - " + nameGen.starttime(task_j) +
-                           " + " + str(__infity) + " " + nameGen.assign(m, task_i) +
-                           " + " + str(__infity) + " " + nameGen.assign(m, task_j) +
-                           " + " + str(__infity) + " " + nameGen.y(task_i, task_j) +
-                           " <= " + str(3 * __infity - float(table.values[task_i.type][m + 2])) +
-                           "\n")
+                file.write(" + " + task_i.name_start())
+                file.write(" - " + task_j.name_start())
+                file.write(task_i.cplex_wcet_with_coefficient("+", str(__infity), [core_m]))
+                # file.write(task_i.cplex_wcet("+", [core_m]))
+                # file.write(task_i.cplex_d("+", str(__infity), [core_m]))
+                file.write(task_j.cplex_d("+", str(__infity), [core_m]))
+                file.write(" + " + str(__infity) + " " + task_i.name_y(task_j))
+                file.write(" <= " + str(3 * __infity) + "\n")
 
                 file.write("   unr_" + str(count) + "_s:\t")
-                file.write(nameGen.starttime(task_j) +
-                           " - " + nameGen.starttime(task_i) +
-                           " + " + str(__infity) + " " + nameGen.assign(m, task_i) +
-                           " + " + str(__infity) + " " + nameGen.assign(m, task_j) +
-                           " - " + str(__infity) + " " + nameGen.y(task_i, task_j) +
-                           " <= " + str(2 * __infity - float(table.values[task_j.type][m + 2])) +
-                           " \n")
+                file.write(" + " + task_j.name_start())
+                file.write(" - " + task_i.name_start())
+                file.write(task_j.cplex_wcet_with_coefficient("+", str(__infity), [core_m]))
+                # file.write(task_j.cplex_wcet(" + ", [core_m]))
+                # file.write(task_j.cplex_d(" + ", str(__infity), [core_m]))
+                file.write(task_i.cplex_d(" + ", str(__infity), [core_m]))
+                file.write(" - " + str(__infity) + " " + task_i.name_y(task_j))
+                file.write(" <= " + str(2 * __infity) + "\n")
+
                 count += 1
 
     file.write("\nBounds\n")
     for i, task in enumerate(graph.tasks.values()):
-        file.write(nameGen.starttime(task) + " >= 0\n")
+        file.write(task.name_start() + " >= 0\n")
 
     file.write("\nBinary\n")
     for i, task in enumerate(graph.tasks.values()):
-        for m in range(proc_num):
-            file.write(nameGen.assign(m, task))
-            file.write("\n")
+        for core_m in graph.cores:
+            if task.is_approx():
+                for v in range(task.get_approx_ver()):
+                    file.write(task.name_assign_approx(core_m, v) + "\n")
+            else:
+                file.write(task.name_assign(core_m) + "\n")
+
     for i, task_i in enumerate(graph.tasks.values()):
         for j, task_j in enumerate(graph.tasks.values()):
             if j <= i:
                 continue
             if (task_i in task_j.children) or (task_j in task_i.children):
                 continue
-            file.write(nameGen.y(task_i, task_j))
+            file.write(task_i.name_y(task_j))
             file.write("\n")
 
     file.write("\nEnd\n")

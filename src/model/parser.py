@@ -23,7 +23,7 @@ class Parser:
 
             match = re.search(r"@HYPERPERIOD(.*)", line)
             if match:
-                self.tgff.hyperPeroid = int(match.group(1))
+                self.tgff.hyperPeriod = int(match.group(1))
                 # print("Hyperperiod", match.group(1))
                 continue
 
@@ -86,15 +86,18 @@ class Parser:
                 continue
 
             if self.tblFlag:
-                match = re.search(r"#-+", line)
-                if match:
-                    self.tblFlag = const.TYPE_ATTR
-                    continue
+                # match = re.search(r"#-+", line)
+                # if match:
+                #     self.tblFlag = const.TYPE_ATTR
+                #     continue
 
                 match = re.search(r"#(( +)(.*))+", line)
                 if match:
                     pattern = re.compile(r'[^\s^#]+', re.DOTALL)
                     lst = pattern.findall(line)
+                    if lst[0] == "type":
+                        self.tblFlag = const.TYPE_ATTR
+
                     if self.tblFlag == const.TABLE_ATTR:
                         for item in lst:
                             table.attr[item] = 0
@@ -120,21 +123,48 @@ class Parser:
         return self.tgff
 
     def generate_graphs(self):
-        for graph in self.tgff.graphs:
+
+        for table in self.tgff.tables:
+            if table.type == "TASK":
+                self.tgff.wcets.append(table)
+            elif table.type == "QUALITY":
+                self.tgff.qualities.append(table)
+            elif table.type == "PERFORMANCE":
+                self.tgff.performances.append(table)
+
+        # for graph in self.tgff.graphs:
+        for g, graph in enumerate(self.tgff.graphs):
             for arc in graph.arcs:
                 graph.tasks[arc.frm].children.append(graph.tasks[arc.to])
                 graph.tasks[arc.to].parents.append(graph.tasks[arc.frm])
-            for name, task in graph.tasks.items():
+
+            for t, task in enumerate(graph.tasks.values()):
                 if len(task.parents) == 0:
                     graph.roots.append(task)
                 if len(task.children) == 0:
                     graph.leaves.append(task)
+
+                if int(self.tgff.wcets[g].values[task.type][3]) != 0:
+                    task.approx = len(self.tgff.qualities[g].columns) - 2
+                else:
+                    task.approx = 0
+
+                task.qualities = self.tgff.qualities[g].values[task.type][2:]
+                if task.is_approx():
+                    task.wcet = self.tgff.performances[g].values[task.type][2:]
+                else:
+                    task.wcet.append(self.tgff.wcets[g].values[task.type][2])
+
+            for i, s in enumerate(self.tgff.wcets[g].attr.values()):
+                core = taskgraph.Core()
+                core.index = i
+                core.speed = s
+                graph.cores.append(core)
+
         return self.tgff
 
     def info(self):
-
-        print("HyperPeriod", self.tgff.hyperPeroid)
-
+        print("HyperPeriod", self.tgff.hyperPeriod)
         for tg in self.tgff.graphs:
             print("-" * 20, "Graph", tg.name, "-" * 20)
 
@@ -160,7 +190,7 @@ class Parser:
                 print("DEADLINE", k, v)
 
         for t in self.tgff.tables:
-            print("-" * 20, "Table", t.name, "-" * 20)
+            print("-" * 20, "Table", t.type, t.name, "-" * 20)
             for k, v in t.attr.items():
                 print("attr", k, v)
             print(t.columns)
