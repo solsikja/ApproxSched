@@ -27,15 +27,29 @@ $ T $ is the set of tasks.
 
 $ P $ is the set of processors.
 
-$ L $ is the set of leaf tasks  $ L \subset T $.
+$ L $ is the set of leaf tasks  $ L \subseteq T $.
 
-$ A $ is the set of the tasks with approximate version, $ A \subset T $.
+$ A $ is the set of the tasks with approximate version, $ A \subseteq T $.
+
+\bigskip
+
+$ V_{t_i} = \{ v_0, v_1, .... v_n \} $ is a software version set of task $t_i \in A$. $v_0$ is the accurate version of task $t_i$, and $v_n$ is the most approximate version of task $t_i$.
+
+$ Q_{t_i} = \{q_{v_a}, q_{v_b}, ... q_{v_n} \} $ is a quality set of approximate task $t_i$. $ \forall q_{v_a} \in Q_{t_i}$ is the average output quality of the task $t_i$ with the version $ v_a \in V_{t_i} $.
+
+$q_{v_a} \in (0, 1]$
+
+$ \forall t_i \notin A$, \qquad $V_{t_i} = \{v_0\}$ and $q_{v_0} = 1$
+
+\bigskip
+
+$wcet_{p_m, t_i, v_a}$ worst execution time of task $t_i$ on processor $p_m$ with software version $v_a$
+
+$\forall v_a \in V_{t_i} $, \quad $wcet_{p_m, t_i, v_0} \ge wcet_{p_m, t_i, v_1} \ge ... \ge wcet_{p_m, t_i, v_n}$
 
 \bigskip
 
 $s_{t_i}$ is the start time of task $t_i$
-
-$wcet_{p_m, t_i}$ worst execution time of task $t_i$ on processor $p_m$
 
 $DL_{t_i}$ is the deadline of the $t_i \in L$
 
@@ -45,24 +59,10 @@ $SUCC_(t_i)$ is the successors set $t_i$
 
 \bigskip
 
-$ V_{t_i} = \{ v_0, v_1, .... v_n \} $ is a software version set of task $t_i \in A$. $v_0$ is the accurate version of task $t_i$, and $v_n$ is the most approximate version of task $t_i$.
-
-$\forall v_a \in V_{t_i} \quad wcet_{p_m, t_i, v_0} \ge wcet_{p_m, t_i, v_1} \ge ... \ge wcet_{p_m, t_i, v_n}$
-
-$ Q_{t_i} = \{q_{v_a}, q_{v_b}, ... q_{v_n} \} $ is a quality set of approximate task $t_i$. $ \forall q_{v_a} \in Q_{t_i}$ is the average output quality of the task $t_i$ with the version $ v_a \in V_{t_i} $
-
-\begin{flalign}
-d_{p_m,t_i} = 
-\begin{cases}
-1 & \text{Task $ t_i \in T$ and $t_i \notin A$ is assigned to processor $p_m$} \\
-0 & \text{Otherwise}
-\end{cases}
-\end{flalign}
-
 \begin{flalign}
 d_{p_m,t_i,v_a} = 
 \begin{cases}
-1 & \text{The version $v_a \in V_{t_i}$ of task $t_i \in A$ is assigned to processor $p_m$} \\
+1 & \text{The version $v_a \in V_{t_i}$ of task $t_i \in T$ is assigned to processor $p_m$} \\
 0 & \text{Otherwise}
 \end{cases}
 \end{flalign}
@@ -88,126 +88,57 @@ $$
 Maximize the overall output qualities of all the approximate tasks(OOQ) under the condition of minimizing the overall execution time(OET).
 
 \begin{flalign}
-OOQ = \sum_{t_i \in A} \sum_{v_a \in V_{t_i}} \sum_{p_m \in P} q_{v_a} \cdot d_{p_m,t_i,v_a} 
+OOQ = \sum_{t_i \in A} \sum_{v_a \in V_{t_i}} \sum_{p_m \in P} q_{v_a} \cdot d_{p_m, t_i, v_a} 
 \end{flalign}
 
 \begin{flalign}
-OET = \sum_{t_i \in L \& t_i \notin A} (s_{t_i} + \sum_{p_m \in P} wcet_{p_m, t_i} \cdot d_{p_m, t_i})
-+ \sum_{t_i \in L \& t_i \in A} (s_{t_i} + \sum_{p_m \in P}\sum_{v_a \in V_{t_i}} wcet_{p_m, t_i, v_a} \cdot d_{p_m, t_i, v_a})
+OET = \sum_{t_i \in L} (s_{t_i} + \sum_{p_m \in P}\sum_{v_a \in V_{t_i}} wcet_{p_m, t_i, v_a} \cdot d_{p_m, t_i, v_a})
 \end{flalign}
-
-% ---------------------------
 
 Subject to:
 
-
 \begin{enumerate}[1. ]
 
-\item Each task can only run on one processor once.\\
-$ \forall t_i \in T $
+\item Each task can only run on one processor once.
+\begin{flalign}
+\forall t_i \in T, \qquad
+\sum_{p_m \in P} \sum_{v_a \in V_{t_i}} d_{p_m, t_i, v_a} = 1
+\end{flalign}
 
-$$
-\sum_{p_m \in P} d_{p_m,t_i} = 1
-$$
-
-\item The start time of task must not be negative.\\
-$ \forall t_i \in T $
-
-$$
+\item The start time of task must not be negative.
+\begin{flalign}
+\forall t_i \in T, \qquad
 s_{t_i} \ge 0
-$$
+\end{flalign}
 
-\item Must meet the deadlines.\\
-$ \forall t_i \in L $
-$$
-s_{t_i} + \sum_{p \in P} (wect_{p_m, t_i} \cdot d_{p_m, t_i}) \le DL_{t_i}
-$$
+\item Must meet the deadlines.
+\begin{flalign}
+\forall t_i \in L, \qquad
+s_{t_i} + \sum_{p_m \in P} \sum_{v_a \in V_{t_i}} (wect_{p_m, t_i, v_a} \cdot d_{p_m, t_i, v_a}) \le DL_{t_i}
+\end{flalign}
 
-\item Must meet the data dependencies. If $t_i$ is one of the predecessors of $t_j$
+\item Must meet the data dependencies. If $t_i$ is one of the predecessors of $t_j$, $t_j$ must start when $t_i$ has finished.
 
-i. If executing on the same processor.\\
-$ \forall t_i \in PREV(t_j) , \forall p_m \in P$
+$\forall t_i \in PREV(t_j)$ and $\forall p_m, p_k \in P$,
+\begin{flalign}
+s_{t_i} + \sum_{v_a \in V_{t_i}} wect_{p_m, t_i, v_a} \le s_{t_j} + (2 - \sum_{v_a \in V_{t_i}}d_{p_m, t_i, v_a} - \sum_{v_b \in V_{t_j}}d_{p_k, t_j, v_b}) \cdot \infty
+\end{flalign}
 
-$$
-s_{t_i} + wect_{p_m, t_i} \le s_{t_j} + (2 - d_{p_m, t_i} - d_{p_m, t_j}) \cdot \infty
-$$
-
-ii. If executing on different processors.\\
-$ \forall t_i \in PREV(t_j) , \forall p_m, p_k \in P $ and $ p_m \neq p_k $
-
-$$
-s_{t_i} + wect_{p_k, t_i} \le s_{t_j} + (2 - d_{p_k, t_i} - d_{p_m, t_j}) \cdot \infty
-$$
-
-\item Two unrelated tasks must not be executed on the same processor at the same time. (They can be executed on different processor or at different time.)\\
-$ \forall p_m \in P \forall t_i, t_j \in T $ and $ t_i \notin PREV(t_j) $ and $ t_j \notin PREV(t_i) $
-
-$$
-s_{t_i} + wect_{p_m, t_i} \le s_{t_j} + (3 - d_{p_m, t_i} - d_{p_m, t_j} - y_{t_i, t_j}) \cdot \infty
-$$
-
-$$
-s_{t_j} + wect_{p_m, t_j} \le s_{t_i} + (3 - d_{p_m, t_i} - d_{p_m, t_j} - y_{t_j, t_i}) \cdot \infty
-$$
-
-$$
+\item Arbitrary two unrelated tasks must not be executed on the same processor at the same time. (They must be allocated on different processor or  executed at different time.)\\
+$ \forall p_m \in P$ and $\forall t_i, t_j \in T $ , where $ t_i \notin PREV(t_j) $ and $ t_j \notin PREV(t_i) $
+\begin{flalign}
+s_{t_i} + \sum_{v_a \in V_{t_i}} wect_{p_m, t_i, v_a} \le s_{t_j} + (3 - \sum_{v_a \in V_{t_i}}d_{p_m, t_i, v_a} - \sum_{v_b \in V_{t_j}}d_{p_m, t_j, v_b} - y_{t_i, t_j}) \cdot \infty
+\end{flalign}
+\begin{flalign}
+s_{t_j} + \sum_{v_a \in V_{t_j}} wect_{p_m, t_j, v_a} \le s_{t_i} + (3 - \sum_{v_b \in V_{t_i}}d_{p_m, t_i, v_b} - \sum_{v_a \in V_{t_j}} d_{p_m, t_j, v_a} - y_{t_j, t_i}) \cdot \infty
+\end{flalign}
+\begin{flalign}
     y_{t_i, t_j} = 1 - y_{t_j, t_i}
-$$
+\end{flalign}
+
+\item Must meet the average quality constraint.
 
 \end{enumerate}
-
-\section{ApproxSched}
-
-$ V(t_i) = \{ t_i^0, t_i^1, .... t_i^n \} $ is a version set of task $t_i$. $t_i^0$ is the accurate version, $t_i^n$ is the most approximate version. $wect_{p_m, t_i^0} > wect_{p_m, t_i^1} > ... wect_{p_m, t_i^n}$
-
-
-$$
-a_{t_i} = 
-\begin{cases}
-1 & \text{Task $t_i$ can be apprroximation} \\
-0 & \text{Otherwise}
-\end{cases}
-$$
-
-$$
-d_{p_m,t_i} = 
-\begin{cases}
-1 & \text{Task $t_i$ is assigned to processor $p_m$} \\
-0 & \text{Otherwise}
-\end{cases}
-$$
-
-$ slack(p_m, t_i) $ is the maximun time slack generated by the approximate task $t_i$ executed on the processor $ p_m $.
-
-$$
-slack(p_m, t_i) = wect_{p_m, t_i^0} - wect_{p_m, t_i^n}
-$$
-
-
-$ \forall t_i \in L $
-\\
-\\
-\\
-\\
-$$
-s_{t_i} + \sum_{p_m \in P} (wect_{p_m, t_i} \cdot d_{p_m, t_i}) \le
-DL_{t_i} - \sum_{p_m \in P} ( d_{p_m, t_i} \cdot \sum_{t \in T} slack(p_m, t) \cdot d_{p_m, t})
-$$
-\\
-\\
-\\
-\\
-Ajusted objective:
-
-$$
-maximize( \sum_{t_i \in L} (DL_{t_i} - (s_{t_i} + \sum_{p \in P} wect_{p_m, t_i} \cdot d_{p_m, t_i})) + \sum_{p_m \in P} \sum_{t_i \in T} slack(p_m, t_i) \cdot d_{p_m, t_i})
-$$
-
-% $$
-% \alpha \in [0, 1]
-% $$
-
-
 
 
 % \begin{figure}[h!]
