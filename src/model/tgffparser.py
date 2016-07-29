@@ -3,7 +3,7 @@ from model import taskgraph
 from model import const
 
 
-class Parser:
+class TgffParser:
     """ A parser for tgff files """
 
     def __init__(self):
@@ -112,10 +112,16 @@ class Parser:
                     # print(lst)
                     if self.tblFlag == const.TABLE_ATTR:
                         for k in table.attr.keys():
-                            table.attr[k] = lst[0]
+                            table.attr[k] = float(lst[0])
                             del lst[0]
                     elif self.tblFlag == const.TYPE_ATTR:
-                        table.values.append(lst)
+                        tmplst = []
+                        for k, val in enumerate(lst):
+                            if k < 2:
+                                tmplst.append(int(val))
+                            else:
+                                tmplst.append(float(val))
+                        table.values.append(tmplst)
                         # print("tbl", table.name, lst)
                     continue
 
@@ -144,16 +150,13 @@ class Parser:
                 if len(task.children) == 0:
                     graph.leaves.append(task)
 
-                if int(self.tgff.wcets[g].values[task.type][3]) != 0:
+                if int(self.tgff.wcets[g].values[task.type][2]) != 0:
                     task.approx = len(self.tgff.qualities[g].columns) - 2
                 else:
-                    task.approx = 0
+                    task.approx = 1
 
                 task.qualities = self.tgff.qualities[g].values[task.type][2:]
-                if task.is_approx():
-                    task.wcet = self.tgff.performances[g].values[task.type][2:]
-                else:
-                    task.wcet.append(self.tgff.wcets[g].values[task.type][2])
+                task.wcet = self.tgff.performances[g].values[task.type][2:]
 
             for i, s in enumerate(self.tgff.wcets[g].attr.values()):
                 core = taskgraph.Core()

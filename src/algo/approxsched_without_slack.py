@@ -1,7 +1,9 @@
 import os
 import os.path
+import string
 
 __infity = 1000
+__k2 = 0.000001
 
 
 def generate(path, tgff):
@@ -24,18 +26,23 @@ def generate(path, tgff):
 def gen_graph(file, graph):
     """ Generate a Graph """
 
-    file.write("\\* This is an example. *\\ \n")
+    file.write("\\* This is a approximate scheduling algorithm without considering slack. *\\ \n")
 
     file.write("\nMaximize\n")
     file.write("obj:\t")
     for task in graph.tasks.values():
-        if not task.is_approx():
+        if not (task.is_approx() or task in graph.leaves):
             continue
         for core_m in graph.cores:
             for ver in range(task.get_approx_ver()):
-                file.write(" + ")
-                file.write(task.get_quality(ver) + " " + task.name_assign_approx(core_m, ver))
+                coef = task.get_quality(ver) if task.is_approx() else 0
+                coef -= __k2 * task.get_wcet(core_m, ver) if task in graph.leaves else 0
+                file.write(" + " + "{:f}".format(coef) + " " + task.name_assign(core_m, ver))
             file.write("\n")
+    for leaf in graph.leaves:
+        file.write(" - " + "{: f}".format(__k2) + " " + leaf.name_start())
+        file.write("\n")
+
     file.write("\n")
 
     file.write("\nSubject To\n")
@@ -63,10 +70,10 @@ def gen_graph(file, graph):
                     file.write("   dpd_sp_" + str(count) + ":\t")
                     file.write(" + " + task_i.name_start())
                     file.write(" - " + task_j.name_start())
-                    file.write(task_i.cplex_wcet_with_coefficient("+", str(__infity), [core_m]))
+                    file.write(task_i.cplex_wcet_with_coefficient("+", __infity, [core_m]))
                     # file.write(task_i)
                     # file.write(task_i.cplex_d(" + ", str(__infity), [core_m]))
-                    file.write(task_j.cplex_d("+", str(__infity), [core_k]))
+                    file.write(task_j.cplex_d("+", __infity, [core_k]))
                     file.write(" <= " + str(2 * __infity) + "\n")
                     count += 1
 
@@ -83,9 +90,7 @@ def gen_graph(file, graph):
                 file.write("   unr_" + str(count) + "_p:\t")
                 file.write(" + " + task_i.name_start())
                 file.write(" - " + task_j.name_start())
-                file.write(task_i.cplex_wcet_with_coefficient("+", str(__infity), [core_m]))
-                # file.write(task_i.cplex_wcet("+", [core_m]))
-                # file.write(task_i.cplex_d("+", str(__infity), [core_m]))
+                file.write(task_i.cplex_wcet_with_coefficient("+", __infity, [core_m]))
                 file.write(task_j.cplex_d("+", str(__infity), [core_m]))
                 file.write(" + " + str(__infity) + " " + task_i.name_y(task_j))
                 file.write(" <= " + str(3 * __infity) + "\n")
@@ -93,10 +98,8 @@ def gen_graph(file, graph):
                 file.write("   unr_" + str(count) + "_s:\t")
                 file.write(" + " + task_j.name_start())
                 file.write(" - " + task_i.name_start())
-                file.write(task_j.cplex_wcet_with_coefficient("+", str(__infity), [core_m]))
-                # file.write(task_j.cplex_wcet(" + ", [core_m]))
-                # file.write(task_j.cplex_d(" + ", str(__infity), [core_m]))
-                file.write(task_i.cplex_d(" + ", str(__infity), [core_m]))
+                file.write(task_j.cplex_wcet_with_coefficient("+", __infity, [core_m]))
+                file.write(task_i.cplex_d(" + ", __infity, [core_m]))
                 file.write(" - " + str(__infity) + " " + task_i.name_y(task_j))
                 file.write(" <= " + str(2 * __infity) + "\n")
 
@@ -109,11 +112,8 @@ def gen_graph(file, graph):
     file.write("\nBinary\n")
     for i, task in enumerate(graph.tasks.values()):
         for core_m in graph.cores:
-            if task.is_approx():
-                for v in range(task.get_approx_ver()):
-                    file.write(task.name_assign_approx(core_m, v) + "\n")
-            else:
-                file.write(task.name_assign(core_m) + "\n")
+            for v in range(task.get_approx_ver()):
+                file.write(task.name_assign(core_m, v) + "\n")
 
     for i, task_i in enumerate(graph.tasks.values()):
         for j, task_j in enumerate(graph.tasks.values()):

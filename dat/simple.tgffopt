@@ -10,38 +10,51 @@ tg_cnt 1
 
 task_degree 3 2
 
-task_cnt 5 1
+task_cnt 10 1
 
 task_unique
 
-task_trans_time 20
+task_trans_time 22
 
 tg_write
 eps_write
 vcg_write
 
+# Table Task Start ------------
 table_label TASK
 table_cnt 1
 table_attrib core_v0 1 0, core_v1 1 0
 #entries_per_type 1 1
 
 # 30 percents approximation
-#type_attrib exec_time 30 5, approximation 0.3 0.5 0 1
+#type_attrib approximation 0.3 0.5 0 1
+
+# 50 percents approximation
+#type_attrib approximation 0.5 0.5 0 1
+
+# 70 percents approximation
+type_attrib approximation 0.7 0.5 0 1
 
 # 100 percents
-type_attrib exec_time 30 5, approximation 1 0
+#type_attrib approximation 1 0
 
 pe_write
+# Table Task End -------------
 
+
+# Table Quality Start --------
 table_label QUALITY
 table_cnt 1
 table_attrib
-#type_attrib level_0 1 0, level_1 0.95 0.05, level_2 0.85 0.05, level_3 0.75 0.05
-type_attrib level_0 1 0, level_1 0.95 0.05
+type_attrib level_0 1 0, level_1 0.95 0.05, level_2 0.85 0.05, level_3 0.75 0.05
+#type_attrib level_0 1 0, level_1 0.95 0.05
 pe_write
+# Table Quality End ----------
 
+# Table Performance Start ----
 table_label PERFORMANCE
 table_cnt 1
-#type_attrib level_0 30 1, level_1 28 1, level_2 26 1, level_3 24 1
-type_attrib level_0 25 5, level_1 15 5
+type_attrib level_0 25 2, level_1 21 2, level_2 17 2, level_3 13 2
+#type_attrib level_0 25 5, level_1 15 5
 pe_write
+# Table Performance End ------
