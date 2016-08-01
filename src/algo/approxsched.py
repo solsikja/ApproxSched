@@ -7,31 +7,28 @@ __infity = 1000
 def generate(path, tgff):
     """ Convert structure taskGraph to cplex file """
 
-    for i, graph in enumerate(tgff.graphs):
-        fn = path + ".lp"
+    if os.path.isfile(path):
+        os.remove(path)
 
-        if os.path.isfile(fn):
-            os.remove(fn)
-
-        file = open(fn, "w")
-        gen_graph(file, graph)
-        file.close()
+    file = open(path, "w")
+    gen_graph(file, tgff)
+    file.close()
 
     print("OK!")
     return
 
 
-def gen_graph(file, graph):
+def gen_graph(file, tgff):
     """ Generate a Graph """
 
     file.write("\\* This is a approximate scheduling algorithm with only considering the average qualities. *\\ \n")
 
     file.write("\nMaximize\n")
     file.write("obj:\t")
-    for task in graph.tasks.values():
+    for task in tgff.tasks.values():
         if not task.is_approx():
             continue
-        for core_m in graph.cores:
+        for core_m in tgff.cores:
             for ver in range(task.get_approx_ver()):
                 file.write(" + ")
                 file.write(str(task.get_quality(ver)) + " " + task.name_assign(core_m, ver))
@@ -40,41 +37,39 @@ def gen_graph(file, graph):
 
     file.write("\nSubject To\n")
     file.write("\\* Each task can only run on one processor once *\\ \n")
-    for i, task in enumerate(graph.tasks.values()):
+    for i, task in enumerate(tgff.tasks.values()):
         file.write("   etro_" + str(i) + ":\t")
-        file.write(task.cplex_d("+", "1", graph.cores))
+        file.write(task.cplex_d("+", "1", tgff.cores))
         file.write(" = 1\n")
 
     file.write("\\* Must meet the deadlines *\\ \n")
-    for leaf in graph.leaves:
+    for leaf in tgff.leaves:
         file.write("   DL_" + leaf.name + ": ")
         file.write(" + " + leaf.name_start())
-        file.write(leaf.cplex_wcet("+", graph.cores))
-        file.write(" <= " + str(graph.deadline[leaf.name]) + "\n")
+        file.write(leaf.cplex_wcet("+", tgff.cores))
+        file.write(" <= " + str(tgff.deadlines[leaf.name]) + "\n")
 
     file.write("\\* Must meet the data dependencies *\\ \n")
     count = 0
-    for name, task_i in graph.tasks.items():
+    for name, task_i in tgff.tasks.items():
         if len(task_i.children) == 0:
             continue
         for task_j in task_i.children:
-            for core_m in graph.cores:
-                for core_k in graph.cores:
+            for core_m in tgff.cores:
+                for core_k in tgff.cores:
                     file.write("   dpd_sp_" + str(count) + ":\t")
                     file.write(" + " + task_i.name_start())
                     file.write(" - " + task_j.name_start())
                     file.write(task_i.cplex_wcet_with_coefficient("+", __infity, [core_m]))
-                    # file.write(task_i)
-                    # file.write(task_i.cplex_d(" + ", str(__infity), [core_m]))
                     file.write(task_j.cplex_d("+", __infity, [core_k]))
                     file.write(" <= " + str(2 * __infity) + "\n")
                     count += 1
 
     file.write("\\* Two unrelated tasks must not be executed on the same processor at the same time. *\\ \n")
     count = 0
-    for core_m in graph.cores:
-        for i, task_i in enumerate(graph.tasks.values()):
-            for j, task_j in enumerate(graph.tasks.values()):
+    for core_m in tgff.cores:
+        for i, task_i in enumerate(tgff.tasks.values()):
+            for j, task_j in enumerate(tgff.tasks.values()):
                 if j <= i:
                     continue
                 if (task_i in task_j.children) or (task_j in task_i.children):
@@ -99,17 +94,17 @@ def gen_graph(file, graph):
                 count += 1
 
     file.write("\nBounds\n")
-    for i, task in enumerate(graph.tasks.values()):
+    for task in tgff.tasks.values():
         file.write(task.name_start() + " >= 0\n")
 
     file.write("\nBinary\n")
-    for i, task in enumerate(graph.tasks.values()):
-        for core_m in graph.cores:
+    for task in tgff.tasks.values():
+        for core_m in tgff.cores:
             for v in range(task.get_approx_ver()):
                 file.write(task.name_assign(core_m, v) + "\n")
 
-    for i, task_i in enumerate(graph.tasks.values()):
-        for j, task_j in enumerate(graph.tasks.values()):
+    for i, task_i in enumerate(tgff.tasks.values()):
+        for j, task_j in enumerate(tgff.tasks.values()):
             if j <= i:
                 continue
             if (task_i in task_j.children) or (task_j in task_i.children):

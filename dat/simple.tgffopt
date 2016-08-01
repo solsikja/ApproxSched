@@ -6,15 +6,15 @@ period_mul 1
 
 period_laxity 1
 
-tg_cnt 1
+tg_cnt 2
 
 task_degree 3 2
 
-task_cnt 10 1
+task_cnt 3 2
 
 task_unique
 
-task_trans_time 22
+task_trans_time 50
 
 tg_write
 eps_write
@@ -46,15 +46,16 @@ pe_write
 table_label QUALITY
 table_cnt 1
 table_attrib
-type_attrib level_0 1 0, level_1 0.95 0.05, level_2 0.85 0.05, level_3 0.75 0.05
-#type_attrib level_0 1 0, level_1 0.95 0.05
+#type_attrib level_0 1 0, level_1 0.95 0.05, level_2 0.85 0.05, level_3 0.75 0.05
+type_attrib level_0 1 0, level_1 0.95 0.05
 pe_write
 # Table Quality End ----------
 
 # Table Performance Start ----
 table_label PERFORMANCE
 table_cnt 1
-type_attrib level_0 25 2, level_1 21 2, level_2 17 2, level_3 13 2
-#type_attrib level_0 25 5, level_1 15 5
+table_attrib core_v0 1 0, core_v1 1 0
+#type_attrib level_0 25 2, level_1 21 2, level_2 17 2, level_3 13 2
+type_attrib level_0 25 5, level_1 15 5
 pe_write
 # Table Performance End ------

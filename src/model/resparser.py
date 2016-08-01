@@ -47,11 +47,10 @@ class ResParser:
         file.close()
 
     def deal_with_result(self, pn, result):
-        tasks = self.tgff.graphs[0].tasks
+        tasks = self.tgff.tasks
         if pn.startswith("d"):
             match = re.search(r"d\(p_(\d+),(\S+),v_(\d+)\)", pn)
             if match:
-                # print("p:", match.group(1), "t:", match.group(2), "v:", match.group(3), "result:", result)
                 if int(result) == 1:
                     if not tasks[match.group(2)].offline:
                         tasks[match.group(2)].offline = taskgraph.Runtime()
@@ -67,7 +66,7 @@ class ResParser:
         return
 
     def get_core(self, core_index):
-        cores = self.tgff.graphs[0].cores
+        cores = self.tgff.cores
         for core in cores:
             if core.index == core_index:
                 return core

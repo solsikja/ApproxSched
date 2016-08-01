@@ -21,10 +21,6 @@ class Task:
 
         self.offline = None     # class Runtime
         self.online = None      # class Runtime
-        #
-        # self.start = 0
-        # self.core = None
-        # self.version = 0
 
     def is_approx(self):
         return self.approx != 1
@@ -119,7 +115,7 @@ class Core:
         self.speed = 0
 
 
-class TaskGraph:
+class Job:
     """ Task Graph """
 
     def __init__(self):
@@ -127,10 +123,9 @@ class TaskGraph:
         self.period = 0
         self.tasks = {}
         self.arcs = []
-        self.deadline = {}
+        self.deadlines = {}
         self.roots = []
         self.leaves = []
-        self.cores = []
 
 
 class Table:
@@ -149,8 +144,15 @@ class Tgff:
 
     def __init__(self):
         self.hyperPeriod = 0
-        self.graphs = []
+        self.jobs = []  # task graph
         self.tables = []
-        self.wcets = []
-        self.qualities = []
-        self.performances = []
+
+        self.approx = []
+        self.quality = []
+        self.performance = []
+        self.cores = []
+
+        self.tasks = {}     # all the tasks in all the jobs
+        self.roots = []
+        self.leaves = []
+        self.deadlines = {}

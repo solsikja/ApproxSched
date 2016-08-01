@@ -30,15 +30,15 @@ class TgffParser:
             match = re.search(r"@TASK_GRAPH(.*){", line)
             if match:
                 self.tgFlag = True
-                tg = taskgraph.TaskGraph();
-                tg.name = match.group(1).strip()
-                self.tgff.graphs.append(tg)
+                job = taskgraph.Job();
+                job.name = match.group(1).strip()
+                self.tgff.jobs.append(job)
                 # print("Graph title", match.group(1))
                 continue
 
             match = re.search(r"[ ]+PERIOD(.*)", line)
             if match:
-                tg.period = int(match.group(1))
+                job.period = int(match.group(1))
                 # print("PERIOD", match.group(1))
                 continue
 
@@ -48,9 +48,7 @@ class TgffParser:
                     task = taskgraph.Task()
                     task.name = match.group(1).strip()
                     task.type = int(match.group(2))
-                    tg.tasks[task.name] = task
-                    # print("TASK", match.group(1), end=";")
-                    # print("TYPE", match.group(2))
+                    job.tasks[task.name] = task
                     continue
 
                 match = re.search(r"ARC(.*)FROM(.*)TO(.*)TYPE(.*)", line)
@@ -61,18 +59,13 @@ class TgffParser:
                     arc.to = match.group(3).strip()
                     arc.type = int(match.group(4))
 
-                    tg.arcs.append(arc)
-                    # print("ARC", match.group(1), end=";")
-                    # print("FROM", match.group(2), end=";")
-                    # print("TO", match.group(3), end=";")
-                    # print("TYPE", match.group(4))
+                    job.arcs.append(arc)
                     continue
 
                 match = re.search(r"HARD_DEADLINE(.*)ON(.*)AT(.*)", line)
                 if match:
-                    tg.deadline[match.group(2).strip()] = int(match.group(3).strip())
-                    # print("TASK", match.group(2), end=";")
-                    # print("DEADLINE", match.group(3))
+                    job.deadlines[match.group(2).strip()] = int(match.group(3).strip())
+                    self.tgff.deadlines[match.group(2).strip()] = int(match.group(3).strip())
                     continue
 
             match = re.search(r"@([^\s]+)( +)([^\s]+) {", line)
@@ -82,15 +75,9 @@ class TgffParser:
                 table.type = match.group(1)
                 table.name = match.group(3)
                 self.tgff.tables.append(table)
-                # print("table", match.group(1), match.group(3))
                 continue
 
             if self.tblFlag:
-                # match = re.search(r"#-+", line)
-                # if match:
-                #     self.tblFlag = const.TYPE_ATTR
-                #     continue
-
                 match = re.search(r"#(( +)(.*))+", line)
                 if match:
                     pattern = re.compile(r'[^\s^#]+', re.DOTALL)
@@ -109,7 +96,6 @@ class TgffParser:
                 if match:
                     pattern = re.compile(r"[-+]?\d+\.?\d*", re.DOTALL)
                     lst = pattern.findall(line)
-                    # print(lst)
                     if self.tblFlag == const.TABLE_ATTR:
                         for k in table.attr.keys():
                             table.attr[k] = float(lst[0])
@@ -122,7 +108,6 @@ class TgffParser:
                             else:
                                 tmplst.append(float(val))
                         table.values.append(tmplst)
-                        # print("tbl", table.name, lst)
                     continue
 
         file.close()
@@ -130,41 +115,43 @@ class TgffParser:
 
     def generate_graphs(self):
 
-        for table in self.tgff.tables:
+        tgff = self.tgff
+
+        for table in tgff.tables:
             if table.type == "TASK":
-                self.tgff.wcets.append(table)
+                tgff.approx = table
             elif table.type == "QUALITY":
-                self.tgff.qualities.append(table)
+                tgff.quality = table
             elif table.type == "PERFORMANCE":
-                self.tgff.performances.append(table)
+                tgff.performance = table
 
-        # for graph in self.tgff.graphs:
-        for g, graph in enumerate(self.tgff.graphs):
-            for arc in graph.arcs:
-                graph.tasks[arc.frm].children.append(graph.tasks[arc.to])
-                graph.tasks[arc.to].parents.append(graph.tasks[arc.frm])
+        for job in tgff.jobs:
+            for arc in job.arcs:
+                job.tasks[arc.frm].children.append(job.tasks[arc.to])
+                job.tasks[arc.to].parents.append(job.tasks[arc.frm])
 
-            for t, task in enumerate(graph.tasks.values()):
+            for task in job.tasks.values():
+                tgff.tasks[task.name] = task
                 if len(task.parents) == 0:
-                    graph.roots.append(task)
+                    job.roots.append(task)
+                    tgff.roots.append(task)
                 if len(task.children) == 0:
-                    graph.leaves.append(task)
-
-                if int(self.tgff.wcets[g].values[task.type][2]) != 0:
-                    task.approx = len(self.tgff.qualities[g].columns) - 2
+                    job.leaves.append(task)
+                    tgff.leaves.append(task)
+                if int(tgff.approx.values[task.type][2]) != 0:
+                    task.approx = len(tgff.quality.columns) - 2
                 else:
                     task.approx = 1
+                task.qualities = tgff.quality.values[task.type][2:]
+                task.wcet = tgff.performance.values[task.type][2:]
 
-                task.qualities = self.tgff.qualities[g].values[task.type][2:]
-                task.wcet = self.tgff.performances[g].values[task.type][2:]
+        for i, s in enumerate(tgff.performance.attr.values()):
+            core = taskgraph.Core()
+            core.index = i
+            core.speed = s
+            tgff.cores.append(core)
 
-            for i, s in enumerate(self.tgff.wcets[g].attr.values()):
-                core = taskgraph.Core()
-                core.index = i
-                core.speed = s
-                graph.cores.append(core)
-
-        return self.tgff
+        return tgff
 
     def info(self):
         print("HyperPeriod", self.tgff.hyperPeriod)
@@ -173,7 +160,7 @@ class TgffParser:
 
             print("Period", tg.period)
 
-            for name, task in tg.tasks.items():
+            for task in tg.tasks.values():
                 # print("TASK", task.name, "TYPE", task.type, "PARENTS", list(task.parents), "CHILDREN",
                 #       repr(task.children))
                 print("TASK", task.name, "TYPE", task.type)
