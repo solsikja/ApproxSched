@@ -124,6 +124,8 @@ class TgffParser:
                 tgff.quality = table
             elif table.type == "PERFORMANCE":
                 tgff.performance = table
+            elif table.type == "EXEC":
+                tgff.exec = table
 
         for job in tgff.jobs:
             for arc in job.arcs:
@@ -144,6 +146,7 @@ class TgffParser:
                     task.approx = 1
                 task.qualities = tgff.quality.values[task.type][2:]
                 task.wcet = tgff.performance.values[task.type][2:]
+                task.exec = tgff.exec.values[task.type][2]
 
         for i, s in enumerate(tgff.performance.attr.values()):
             core = taskgraph.Core()

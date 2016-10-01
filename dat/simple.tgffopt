@@ -14,7 +14,7 @@ task_cnt 3 2
 
 task_unique
 
-task_trans_time 50
+task_trans_time 30
 
 tg_write
 eps_write
@@ -59,3 +59,10 @@ table_attrib core_v0 1 0, core_v1 1 0
 type_attrib level_0 25 5, level_1 15 5
 pe_write
 # Table Performance End ------
+
+# Table Exec Time Start ------
+table_label EXEC
+table_cnt 1
+type_attrib exec_time 0.8 0.2
+pe_write
+# Table Exec Time End --------

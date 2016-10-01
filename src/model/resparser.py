@@ -45,6 +45,7 @@ class ResParser:
                 continue
 
         file.close()
+        self.generate_time()
 
     def deal_with_result(self, pn, result):
         tasks = self.tgff.tasks
@@ -71,3 +72,13 @@ class ResParser:
             if core.index == core_index:
                 return core
         return None
+
+    def generate_time(self):
+        for task in self.tgff.tasks.values():
+            task.offline.end = task.offline.start + task.get_wcet(task.offline.core, task.offline.version)
+            task.online = taskgraph.Runtime()
+            task.online.core = task.offline.core
+            task.online.version = task.offline.version
+            task.online.start = task.offline.start
+            task.online.end = task.online.start + task.get_wcet(task.online.core, task.online.version) * task.exec
+

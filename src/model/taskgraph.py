@@ -3,6 +3,7 @@ class Runtime:
 
     def __init__(self):
         self.start = 0
+        self.end = 0
         self.version = 0
         self.core = None
 
@@ -18,6 +19,7 @@ class Task:
         self.approx = 0
         self.qualities = []
         self.wcet = []
+        self.exec = 0
 
         self.offline = None     # class Runtime
         self.online = None      # class Runtime
@@ -151,6 +153,7 @@ class Tgff:
         self.quality = []
         self.performance = []
         self.cores = []
+        self.exec = []
 
         self.tasks = {}     # all the tasks in all the jobs
         self.roots = []

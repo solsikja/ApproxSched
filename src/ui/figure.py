@@ -49,6 +49,26 @@ class Figure:
 
         _svg.save()
 
+    def runtime(self, path):
+        """
+        Draw the runtime figure
+        :param path the file path of the figure
+        """
+
+        if os.path.isfile(path):
+            os.remove(path)
+
+        _svg = svg.SVG(path, self.scale)
+        self.__draw_bg(_svg)
+        self.__draw_axis(_svg)
+
+        for task in self.tgff.tasks.values():
+            self.__draw_task_rect_rt(_svg, task)
+
+        self.__draw_deadline(_svg)
+
+        _svg.save()
+
     def __draw_bg(self, _svg):
         _svg.draw_rect((0, 0), ("100%", "100%"), fill="lightgreen")
 
@@ -97,3 +117,19 @@ class Figure:
             _svg.draw_rect((x, y), (w, h))
         _svg.draw_text(task.name, (x, y + self.font_size))
         _svg.draw_text("v:" + str(offline.version), (x, y + self.font_size * 2))
+
+    def __draw_task_rect_rt(self, _svg, task):
+        online = task.online
+        x = self.offset + online.start * self.scale
+        y = self.core_y[online.core.index] - self.box_height
+        w = task.get_wcet(online.core, online.version) * task.exec * self.scale
+        h = self.box_height
+
+        # print(task.name, task.exec)
+
+        if task.is_approx():
+            _svg.draw_rect((x, y), (w, h), fill="lightgray")
+        else:
+            _svg.draw_rect((x, y), (w, h))
+        _svg.draw_text(task.name, (x, y + self.font_size))
+        _svg.draw_text("v:" + str(online.version), (x, y + self.font_size * 2))
